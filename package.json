@@ -1,0 +1,15 @@
+{
+  "name": "twisthrm-api_auto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.0.1",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  }
+}

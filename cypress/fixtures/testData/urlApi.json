@@ -1,0 +1,16 @@
+{
+    "uploadUrl": "/twisthrm/api/v1/employee/upload",
+    "invalidUrl": "/twisthrm/api/v1/employees/upload",
+    "getEmployee": "/twisthrm/api/v1/employee",
+    "getAllEmployee": "/twisthrm/api/v1/employee?keyword=&page=1&pageSize=10&sort=lastName%20ASC&isDel=0",
+    "validIDurl": "/twisthrm/api/v1/employee/093022-432",
+    "invalidIdurl": "/twisthrm/api/v1/employee/31312",
+    "loginUrl": "/twisthrm/api/v1/user/login",
+    "invalidLoginUrl": "/twisthrm/api/v1/users/login",
+    "invalidParametersUrl": "/twisthrm/api/v1/employee?sort=lastName%20DESC&keyword=123455&isDel=0&queryFrom=ourpeople",
+    "getInvalidUrl": "/twisthrm/api/v1/employeee?sort=lastName%20DESC&keyword=123455&isDel=0&queryFrom=ourpeople",
+    "missingRequestPathUrl": "/twisthrm/api/employee?page=1&pageSize=13&sort=EmployeeNumber+ASC&isDel=0",
+    "sortTeamDesc": "/twisthrm/api/v1/employee?isDel=0&sort=lastName%20DESC&keyword=twisthrm&queryFrom=ourpeople",
+    "sortPositionDesc": "/twisthrm/api/v1/employee?isDel=0&sort=lastName%20DESC&keyword=agile%20test%20engineer&queryFrom=ourpeople",
+    "getOurPeople": "/twisthrm/api/v1/employee?sort=lastName%20ASC&keyword=&isDel=0&queryFrom=ourpeople"
+}
