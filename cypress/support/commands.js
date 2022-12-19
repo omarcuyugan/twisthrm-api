@@ -775,4 +775,224 @@
             })
         })
     });
+    //Search Our People Page
+    Cypress.Commands.add('searchHrPersonnel', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchOurPeople,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchEmployeeInvalid', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchOurPeople,
+            headers: {
+                'auth-token': token.invalidToken,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchEmployeeNoToken', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchOurPeople,
+            headers: {
+                'auth-token': "",
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchInvalidUrl', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchInvalidUrl,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchEmployee', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchOurPeople,
+            headers: {
+                'auth-token': token.employeeDev,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('sqlInjection', () => {
+        cy.request({
+            method: 'GET',
+            url: url.sqlInjectionUrl,
+            headers: {
+                'auth-token': token.employeeDev,
+            },
+            failOnStatusCode: false
+        })
+    });
+    //Pagination
+    Cypress.Commands.add('pagePim', () => {
+        cy.request({
+            method: 'GET',
+            url: url.page2PIM,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('invalidUrlPIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.invalidPimUrl,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('pageSize', () => {
+        cy.request({
+            method: 'GET',
+            url: url.pageSize,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('invalidPagePIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.invalidPage,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('invalidPageSizePIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.invalidPageSize,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('emptyPagePIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.emptyPage,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('emptyPageSizePIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.emptyPageSize,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+    //Our People User Profile Display
+    Cypress.Commands.add('getSpecificEmployee', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployee,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getSpecificEmployeeInvalidToken', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployeeInvalid,
+            headers: {
+                'auth-token': token.invalidToken,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getSpecificEmployeeNoToken', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployeeInvalid,
+            headers: {
+                'auth-token': "",
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getSpecificEmployeeInvalid', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployeeInvalid,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getSpecificEmployeeEmpty', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployeeEmpty,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getSpecificEmployeeInvalidUrl', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployeeInvalidUrl,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getSpecificEmployeeAsEmployee', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getSpecificEmployee,
+            headers: {
+                'auth-token': token.employeeDev,
+            },
+            failOnStatusCode: false
+        })
+    });
 }

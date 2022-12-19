@@ -12,5 +12,19 @@
     "missingRequestPathUrl": "/twisthrm/api/employee?page=1&pageSize=13&sort=EmployeeNumber+ASC&isDel=0",
     "sortTeamDesc": "/twisthrm/api/v1/employee?isDel=0&sort=lastName%20DESC&keyword=twisthrm&queryFrom=ourpeople",
     "sortPositionDesc": "/twisthrm/api/v1/employee?isDel=0&sort=lastName%20DESC&keyword=agile%20test%20engineer&queryFrom=ourpeople",
-    "getOurPeople": "/twisthrm/api/v1/employee?sort=lastName%20ASC&keyword=&isDel=0&queryFrom=ourpeople"
+    "getOurPeople": "/twisthrm/api/v1/employee?sort=lastName%20ASC&keyword=&isDel=0&queryFrom=ourpeople",
+    "searchOurPeople": "/twisthrm/api/v1/employee?sort=LastName+ASC&isDel=0&keyword=Scrum&queryFrom=ourpeople",
+    "searchInvalidUrl": "/twisthrm/api/v1/employees?sort=LastName+ASC&isDel=0&keyword=Scrum&queryFrom=ourpeople",
+    "sqlInjectionUrl": "/twisthrm/api/v1/employee?sort=lastName%20ASC%2c(select*from(select(sleep(20)))a)&keyword=test&isDel=0&queryFrom=ourpeople",
+    "page2PIM": "/twisthrm/api/v1/employee?page=2&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "pageSize": "/twisthrm/api/v1/employee?page=1&pageSize=15&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "invalidPage": "/twisthrm/api/v1/employee?page=test&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "invalidPageSize": "/twisthrm/api/v1/employee?page=1&pageSize=@&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "emptyPage": "/twisthrm/api/v1/employee?page=&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "emptyPageSize": "/twisthrm/api/v1/employee?page=1&pageSize=&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "invalidPimUrl": "/twisthrm/api/v1/employees?page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "getSpecificEmployee": "/twisthrm/api/v1/employee/093022-431",
+    "getSpecificEmployeeInvalid":"/twisthrm/api/v1/employee/093022",
+    "getSpecificEmployeeEmpty":"/twisthrm/api/v1/employee/",
+    "getSpecificEmployeeInvalidUrl": "/twisthrm/api/v1/employees/093022-431"
 }
