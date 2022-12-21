@@ -2,7 +2,6 @@
     const token = require("../fixtures/token/token.json")
     const url = require("../fixtures/testData/urlApi.json")
 
-
     describe('Bulk Upload, As an HR Personnel', () => {
         it('I should be able to upload employee details by passing valid token', () => {
             cy.uploadWithValidToken()
