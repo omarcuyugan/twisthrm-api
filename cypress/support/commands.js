@@ -177,7 +177,7 @@
             failOnStatusCode: false
         })
     });
-// Bulk Upload
+    // Bulk Upload
     Cypress.Commands.add('uploadWithValidToken', () => {
         const fileName = 'testFiles/20230301.csv';
         cy.fixture(fileName, 'binary').then(file => {
@@ -1138,5 +1138,155 @@
             },
             failOnStatusCode: false
         })
+    });
+
+    Cypress.Commands.add('sortLastNameAZ', () => {
+        let listingCount = "";
+        let GenSampleAZ = [];
+        let GenSampleToSort = [];
+        cy.getEmployeePIM().then(async (response) => {
+            listingCount = Cypress.$(response.body.employees).length;
+            for (let x = 0; x < listingCount; x++) {
+                GenSampleAZ.push(response.body.employees[x].LastName)
+            }
+            GenSampleToSort = GenSampleAZ.sort();
+            expect(response.status).to.eq(200)
+            expect(response).to.have.property("body")
+            expect(response.body).to.have.property("employees")
+            expect(GenSampleAZ.toString()).to.be.equal(GenSampleToSort.toString());
+        });
+    });
+
+    Cypress.Commands.add('sortLastNameZA', () => {
+        let listingCount = "";
+        let GenSampleZA = [];
+        let GenSampleResponse = [];
+        let GenSampleToReverse = [];
+        cy.request({
+            method: 'GET',
+            url: url.sortLastNameDesc,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+        .then(async (response) => {
+            listingCount = Cypress.$(response.body.employees).length;
+            for (let x = 0; x < listingCount; x++) {
+                GenSampleZA.push(response.body.employees[x].LastName)
+                cy.log(response.body.employees[x].LastName)
+            }
+            GenSampleResponse = GenSampleZA.sort();
+            GenSampleToReverse = GenSampleResponse.reverse();
+            expect(response.status).to.eq(200)
+            expect(response).to.have.property("body")
+            expect(response.body).to.have.property("employees")
+            expect(GenSampleZA.toString()).to.be.equal(GenSampleToReverse.toString());
+        });
+    });
+
+    Cypress.Commands.add('sortRoleAZ', () => {
+        let listingCount = "";
+        let GenSampleAZ = [];
+        let GenSampleToSort = [];
+        cy.request({
+            method: 'GET',
+            url: url.sortRoleAsc,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+        .then(async (response) => {
+            listingCount = Cypress.$(response.body.employees).length;
+            for (let x = 0; x < listingCount; x++) {
+                GenSampleAZ.push(response.body.employees[x].CurrentPosition)
+            }
+            GenSampleToSort = GenSampleAZ.sort();
+            expect(response.status).to.eq(200)
+            expect(response).to.have.property("body")
+            expect(response.body).to.have.property("employees")
+            expect(GenSampleAZ.toString()).to.be.equal(GenSampleToSort.toString());
+        });
+    });
+
+    Cypress.Commands.add('sortRoleZA', () => {
+        let listingCount = "";
+        let GenSampleZA = [];
+        let GenSampleResponse = [];
+        let GenSampleToReverse = [];
+        cy.request({
+            method: 'GET',
+            url: url.sortRoleDesc,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+        .then(async (response) => {
+            listingCount = Cypress.$(response.body.employees).length;
+            for (let x = 0; x < listingCount; x++) {
+                GenSampleZA.push(response.body.employees[x].CurrentPosition)
+            }
+            GenSampleResponse = GenSampleZA.sort();
+            GenSampleToReverse = GenSampleResponse.reverse();
+            expect(response.status).to.eq(200)
+            expect(response).to.have.property("body")
+            expect(response.body).to.have.property("employees")
+            expect(GenSampleZA.toString()).to.be.equal(GenSampleToReverse.toString());
+        });
+    });
+
+    
+    Cypress.Commands.add('sortEmailAZ', () => {
+        let listingCount = "";
+        let GenSampleAZ = [];
+        let GenSampleToSort = [];
+        cy.request({
+            method: 'GET',
+            url: url.sortEmailAsc,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+        .then(async (response) => {
+            listingCount = Cypress.$(response.body.employees).length;
+            for (let x = 0; x < listingCount; x++) {
+                GenSampleAZ.push(response.body.employees[x].TREmail)
+            }
+            GenSampleToSort = GenSampleAZ.sort();
+            expect(response.status).to.eq(200)
+            expect(response).to.have.property("body")
+            expect(response.body).to.have.property("employees")
+            expect(GenSampleAZ.toString()).to.be.equal(GenSampleToSort.toString());
+        });
+    });
+
+    Cypress.Commands.add('sortEmailZA', () => {
+        let listingCount = "";
+        let GenSampleZA = [];
+        let GenSampleResponse = [];
+        let GenSampleToReverse = [];
+        cy.request({
+            method: 'GET',
+            url: url.sortEmailDesc,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+        .then(async (response) => {
+            listingCount = Cypress.$(response.body.employees).length;
+            for (let x = 0; x < listingCount; x++) {
+                GenSampleZA.push(response.body.employees[x].TREmail)
+            }
+            GenSampleResponse = GenSampleZA.sort();
+            GenSampleToReverse = GenSampleResponse.reverse();
+            expect(response.status).to.eq(200)
+            expect(response).to.have.property("body")
+            expect(response.body).to.have.property("employees")
+            expect(GenSampleZA.toString()).to.be.equal(GenSampleToReverse.toString());
+        });
     });
 }

@@ -31,11 +31,7 @@
         })
 
         it('List of Employee Names should be sorted A-Z by default', () => {
-            cy.getEmployeePIM()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
+            cy.sortLastNameAZ()
         })
 
         it('Each employee record must have the following details in the response', () => {
@@ -120,47 +116,42 @@
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
+                    expect(response.body).to.have.property("employees")
+                    expect(response.body.employees[0]).to.have.property("EmployeeNumber").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("FirstName").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("LastName").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("Birthday").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("TREmail").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("CurrentPosition").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("Department").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("Contact").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("Status").to.not.be.null
+                    expect(response.body.employees[0]).to.have.property("ActiveStatus").to.not.be.null
                 })
         })
 
-        it('I should be able to sort the "Name" from ascending to descending order', () => {
-            cy.getEmployeePIM()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
+        it('I should be able to sort the "Name" to ascending order', () => {
+            cy.sortLastNameAZ()
         })
 
-        it('I should be able to sort the "Role" from ascending to descending order', () => {
-            cy.getEmployeePIM()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
+        it('I should be able to sort the "Name" to descending order', () => {
+            cy.sortLastNameZA()
         })
 
-        it('I should be able to sort the "Role" from descending to ascending order', () => {
-            cy.getEmployeePIM()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
+        it('I should be able to sort the "Role" to ascending order', () => {
+            cy.sortRoleAZ()
         })
 
-        it('I should be able to sort the "Email" from ascending to descending order', () => {
-            cy.getEmployeePIM()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
+        it('I should be able to sort the "Role" to descending order', () => {
+            cy.sortRoleZA()
         })
 
-        it('I should be able to sort the "Email" from descending to asscending order', () => {
-            cy.getEmployeePIM()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
+        it('I should be able to sort the "Email" to ascending order', () => {
+            cy.sortEmailAZ()
+        })
+
+        it('I should be able to sort the "Email" to descending order', () => {
+            cy.sortEmailZA()
         })
 
         it('I should be able to include the deactivated Employees on the list by passing "isDel" parameter', () => {

@@ -36,5 +36,10 @@
     "getInvalidPage":"/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=trEmail%20ASC&pageSize=10&page=@",
     "getEmptyIsdel": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=trEmail%20ASC&pageSize=10&page=1",
     "getEmptySort": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=trEmail%20ASC&pageSize=10&page=1",
-    "getEmptyPage": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=trEmail%20ASC&pageSize=10&page=1"
+    "getEmptyPage": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=trEmail%20ASC&pageSize=10&page=1",
+    "sortLastNameDesc": "/twisthrm/api/v1/employee?keyword=&page=1&pageSize=10&sort=lastName%20DESC&isDel=0&queryFrom=pim",
+    "sortRoleAsc": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=0&sort=positionName%20ASC&pageSize=10&page=1",
+    "sortRoleDesc": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=0&sort=positionName%20DESC&pageSize=10&page=1",
+    "sortEmailAsc": "/twisthrm/api/v1/employee?queryFrom=pim&isDel=0&sort=trEmail%20ASC&pageSize=10&page=1",
+    "sortEmailDesc": "/twisthrm/api/v1/employee?queryFrom=pim&isDel=0&sort=trEmail%20DESC&pageSize=10&page=1"
 }
