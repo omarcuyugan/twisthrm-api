@@ -4,7 +4,6 @@
             cy.searchHrPersonnel()
                 .then(async (response) => {
                     let count = Cypress.$(response.body.employees).length
-                    cy.log(count)
                     for (let x = 0; x < count; x++) {
                         const employees = response.body.employees[x].CurrentPosition
                         expect(response.status).to.eq(200)
@@ -64,11 +63,11 @@
                 .then(response => {
                     let count = Cypress.$(response.body.employees).length
                     cy.log(count)
-                        expect(response.status).to.eq(200)
-                        expect(response).to.have.property("body")
-                        expect(response.body.employees).to.have.length(3)
-                        expect(response.body).to.have.property("totalRecords", 3)
-                        expect(count).to.equal(response.body.employees.length)
+                    expect(response.status).to.eq(200)
+                    expect(response).to.have.property("body")
+                    expect(response.body.employees).to.have.length(3)
+                    expect(response.body).to.have.property("totalRecords", 3)
+                    expect(count).to.equal(response.body.employees.length)
                 })
         })
 
@@ -85,16 +84,16 @@
     describe('Search As an Employee API', () => {
         it('I should be able to search an Employee by passing valid token', () => {
             cy.searchEmployee()
-            .then(async (response) => {
-                let count = Cypress.$(response.body.employees).length
-                cy.log(count)
-                for (let x = 0; x < count; x++) {
-                    const employees = response.body.employees[x].CurrentPosition
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                    expect(employees).to.contains("Scrum")
-                }
-            })
+                .then(async (response) => {
+                    let count = Cypress.$(response.body.employees).length
+                    cy.log(count)
+                    for (let x = 0; x < count; x++) {
+                        const employees = response.body.employees[x].CurrentPosition
+                        expect(response.status).to.eq(200)
+                        expect(response).to.have.property("body")
+                        expect(employees).to.contains("Scrum")
+                    }
+                })
         });
 
         it('I should not be able to search an Employee by passing invalid token', () => {

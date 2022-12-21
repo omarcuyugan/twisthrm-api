@@ -76,7 +76,7 @@
         })
 
     })
-    describe('User Profile Display, As an Employee API', () => {    
+    describe('User Profile Display, As an Employee API', () => {
         it('I should be able to fetch a specific employee using a valid token', () => {
             cy.getSpecificEmployeeAsEmployee()
                 .then(response => {
@@ -100,6 +100,6 @@
                     expect(response.body[0]).to.have.property("Team")
                     expect(response.body[0]).to.have.property("Nickname")
                 })
-        })     
+        })
     })
 }

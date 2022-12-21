@@ -2,7 +2,7 @@
     const token = require("../fixtures/token/token.json")
     const url = require("../fixtures/testData/urlApi.json")
     const loginHrPersonnel = require("../fixtures/requestBody/loginHrPersonnel.json")
-    const requestInvalid = require("../fixtures/requestBody/loginInvalid.json")
+    const loginEmployee = require("../fixtures/requestBody/loginEmployee.json")
     const requestNoToken = require("../fixtures/requestBody/loginNoToken.json")
 
     //Our People Feature
@@ -43,6 +43,17 @@
         cy.request({
             method: 'GET',
             url: url.getInvalidUrl,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getMissingUrl', () => {
+        cy.request({
+            method: 'GET',
+            url: url.missingRequestPathUrl,
             headers: {
                 'auth-token': token.hrPersonnel,
             },
@@ -122,10 +133,7 @@
         cy.request({
             method: 'POST',
             url: url.loginUrl,
-            form: true,
-            body: {
-                "token": token.employeeDev
-            },
+            body: loginEmployee,
             failOnStatusCode: false
         });
     })
@@ -134,8 +142,11 @@
         cy.request({
             method: 'POST',
             url: url.loginUrl,
-            body: requestInvalid,
-            failOnStatusCode: false
+            body: {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+            },
+            failOnStatusCode: false,
+            timeout: 61000
         })
     });
 
@@ -144,7 +155,8 @@
             method: 'POST',
             url: url.loginUrl,
             body: requestNoToken,
-            failOnStatusCode: false
+            failOnStatusCode: false,
+            timeout: 61000
         })
     });
 
@@ -165,7 +177,7 @@
             failOnStatusCode: false
         })
     });
-
+// Bulk Upload
     Cypress.Commands.add('uploadWithValidToken', () => {
         const fileName = 'testFiles/20230301.csv';
         cy.fixture(fileName, 'binary').then(file => {
@@ -991,6 +1003,138 @@
             url: url.getSpecificEmployee,
             headers: {
                 'auth-token': token.employeeDev,
+            },
+            failOnStatusCode: false
+        })
+    });
+    //Employee List
+    Cypress.Commands.add('getEmployeePIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmployeePIM,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmployeeInvalidTokenPIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmployeePIM,
+            headers: {
+                'auth-token': token.invalidToken,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmployeeNoTokenPIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmployeePIM,
+            headers: {
+                'auth-token': ""
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmployeeInvalidUrlPIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmployeeInvalidUrlPIM,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmployeeInvalidPagePIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmployeeInvalidPagePIM,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getDeactivatedPIM', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getDeactivated,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getInvalidIsdel', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getInvalidIsdel,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getInvalidSort', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getInvalidSort,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getInvalidPage', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getInvalidPage,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmptyIsdel', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmptyIsdel,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmptySort', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmptySort,
+            headers: {
+                'auth-token': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('getEmptyPage', () => {
+        cy.request({
+            method: 'GET',
+            url: url.getEmptyPage,
+            headers: {
+                'auth-token': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
