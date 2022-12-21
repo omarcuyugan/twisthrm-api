@@ -295,9 +295,6 @@
                 })
         })
 
-        // it('Ignore employee data in the csv file when the employee details has no changes in employee record', () => {
-        // })
-
         it('Employee status "Resigned" will be removed from the Employee List', () => {
             cy.resignedStatus()
                 .then(response => {
