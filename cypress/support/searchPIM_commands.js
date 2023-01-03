@@ -5,7 +5,7 @@
     Cypress.Commands.add('searchHrPersonnel', () => {
         cy.request({
             method: 'GET',
-            url: url.searchOurPeople,
+            url: url.searchPIM,
             headers: {
                 'auth-token': token.hrPersonnel,
             },
@@ -16,7 +16,7 @@
     Cypress.Commands.add('searchEmployeeInvalid', () => {
         cy.request({
             method: 'GET',
-            url: url.searchOurPeople,
+            url: url.searchPIM,
             headers: {
                 'auth-token': token.invalidToken,
             },
@@ -27,7 +27,7 @@
     Cypress.Commands.add('searchEmployeeNoToken', () => {
         cy.request({
             method: 'GET',
-            url: url.searchOurPeople,
+            url: url.searchPIM,
             headers: {
                 'auth-token': "",
             },
@@ -49,18 +49,7 @@
     Cypress.Commands.add('searchEmployee', () => {
         cy.request({
             method: 'GET',
-            url: url.searchOurPeople,
-            headers: {
-                'auth-token': token.employeeDev,
-            },
-            failOnStatusCode: false
-        })
-    });
-
-    Cypress.Commands.add('sqlInjection', () => {
-        cy.request({
-            method: 'GET',
-            url: url.sqlInjectionUrl,
+            url: url.searchPIM,
             headers: {
                 'auth-token': token.employeeDev,
             },
