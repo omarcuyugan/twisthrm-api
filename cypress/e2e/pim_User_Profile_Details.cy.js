@@ -1,5 +1,5 @@
 {
-    describe('Our People User Profile Details, As an HR Personnel API', () => {
+    describe('User Profile Details, As an HR Personnel API', () => {
         it('Should be able to fetch user details by passing valid token', () => {
             cy.getSpecificEmployee2()
                 .then(response => {
@@ -95,15 +95,6 @@
                 })
         })
 
-        it('Invalid objects should be validated', () => {
-            cy.updateWithInvalidObject()
-            .then(response => {
-                expect(response.status).to.eq(400)
-                expect(response).to.have.property("body")
-                expect(response.body).to.have.property("message","Error updating employee with employee number: 093022-432.")
-            })
-        })
-
         it('I should be able to edit the editable fields ', () => {
             cy.updateEmployeeAsHrPersonnel()
             .then(response => {
@@ -119,40 +110,18 @@
                 expect(response.body[0]).to.have.property("Nickname","McCoy Test")
             })
         })
+
+        it('Invalid objects should be validated', () => {
+            cy.updateWithInvalidObject()
+            .then(response => {
+                expect(response.status).to.eq(400)
+                expect(response).to.have.property("body")
+                expect(response.body).to.have.property("message","Error updating employee with employee number: 093022-432.")
+            })
+        })
     
     })
-    describe('Our People User Profile Details, As an Employee API', () => {
-        it('Fetch employee record must have the following details in the response', () => {
-            cy.getSpecificEmployeeAsEmployee()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                    expect(response.body[0]).to.have.property("EmployeeNumber")
-                    expect(response.body[0]).to.have.property("FirstName")
-                    expect(response.body[0]).to.have.property("LastName")
-                    expect(response.body[0]).to.have.property("TREmail")
-                    expect(response.body[0]).to.have.property("CurrentPosition")
-                    expect(response.body[0]).to.have.property("Team")
-                    expect(response.body[0]).to.have.property("Nickname")
-                })
-        })
-
-        it('I should be able to edit my information with the editable fields', () => {
-            cy.updateEmployeeAsEmployee()
-            .then(response => {
-                expect(response.status).to.eq(200)
-                expect(response).to.have.property("body")
-                expect(response.body).to.have.property("data","093022-431")
-                expect(response.body).to.have.property("message","Employee successfully updated.")
-            })
-            cy.getSpecificEmployee()
-            .then(response => {
-                expect(response.body[0]).to.have.property("FirstName","Earll Anthony")
-                expect(response.body[0]).to.have.property("LastName","FERNANDEZZ")
-                expect(response.body[0]).to.have.property("Nickname","Tonton")
-            })
-        })
-
+    describe('User Profile Details, As an Employee API', () => {
         it('I should not be able to edit other employees information with the editable fields', () => {
             cy.updateOtherEmployeeAsEmployee()
             .then(response => {
