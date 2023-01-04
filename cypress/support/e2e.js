@@ -22,6 +22,7 @@ import './pagination_commands'
 import './searchOurPeople_commands'
 import './searchPIM_commands'
 import './userProfileDisplay_commands'
+import './userProfileDetails_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
