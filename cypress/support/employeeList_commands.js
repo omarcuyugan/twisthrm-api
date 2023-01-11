@@ -7,7 +7,7 @@
             method: 'GET',
             url: url.getEmployeePIM,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -18,7 +18,7 @@
             method: 'GET',
             url: url.getEmployeePIM,
             headers: {
-                'auth-token': token.invalidToken,
+                'Authorization': token.invalidToken,
             },
             failOnStatusCode: false
         })
@@ -29,7 +29,7 @@
             method: 'GET',
             url: url.getEmployeePIM,
             headers: {
-                'auth-token': ""
+                'Authorization': ""
             },
             failOnStatusCode: false
         })
@@ -40,7 +40,7 @@
             method: 'GET',
             url: url.getEmployeeInvalidUrlPIM,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -51,7 +51,7 @@
             method: 'GET',
             url: url.getEmployeeInvalidPagePIM,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -62,7 +62,7 @@
             method: 'GET',
             url: url.getDeactivated,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -73,7 +73,7 @@
             method: 'GET',
             url: url.getInvalidIsdel,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -84,7 +84,7 @@
             method: 'GET',
             url: url.getInvalidSort,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -95,7 +95,7 @@
             method: 'GET',
             url: url.getInvalidPage,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -106,7 +106,7 @@
             method: 'GET',
             url: url.getEmptyIsdel,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -117,7 +117,7 @@
             method: 'GET',
             url: url.getEmptySort,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -128,7 +128,7 @@
             method: 'GET',
             url: url.getEmptyPage,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -160,7 +160,7 @@
             method: 'GET',
             url: url.sortLastNameDesc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -187,7 +187,7 @@
             method: 'GET',
             url: url.sortRoleAsc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -213,7 +213,7 @@
             method: 'GET',
             url: url.sortRoleDesc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -240,7 +240,7 @@
             method: 'GET',
             url: url.sortEmailAsc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -266,7 +266,7 @@
             method: 'GET',
             url: url.sortEmailDesc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })

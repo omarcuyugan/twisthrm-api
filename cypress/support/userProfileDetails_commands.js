@@ -7,7 +7,7 @@
             method: 'GET',
             url: url.getSpecificEmployee2,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -18,7 +18,7 @@
             method: 'GET',
             url: url.getSpecificEmployeeInvalid,
             headers: {
-                'auth-token': token.invalidToken,
+                'Authorization': token.invalidToken,
             },
             failOnStatusCode: false
         })
@@ -29,7 +29,7 @@
             method: 'GET',
             url: url.getSpecificEmployeeInvalid,
             headers: {
-                'auth-token': "",
+                'Authorization': "",
             },
             failOnStatusCode: false
         })
@@ -40,7 +40,7 @@
             method: 'GET',
             url: url.getSpecificEmployeeInvalid,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -51,7 +51,7 @@
             method: 'GET',
             url: url.getSpecificEmployeeEmpty,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -62,7 +62,7 @@
             method: 'GET',
             url: url.getSpecificEmployeeInvalidUrl2,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -73,7 +73,7 @@
             method: 'GET',
             url: url.getSpecificEmployee,
             headers: {
-                'auth-token': token.employeeDev,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })
@@ -89,7 +89,7 @@
                 "Nickname": "Tonton"
             },
             headers: {
-                'auth-token': token.employeeDev,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })
@@ -105,7 +105,7 @@
                 "Nickname": "McCoy Test"
             },
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -121,7 +121,7 @@
                 "Nickname": "McCoy Test"
             },
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -137,7 +137,7 @@
                 "Nickname": "McCoy Test"
             },
             headers: {
-                'auth-token': token.employeeDev,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })

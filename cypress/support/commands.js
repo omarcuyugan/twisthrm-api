@@ -17,7 +17,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
             })
@@ -36,7 +36,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.invalidToken,
+                    'Authorization': token.invalidToken,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -56,7 +56,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': "",
+                    'Authorization': "",
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -76,7 +76,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -96,7 +96,7 @@
                 url: url.invalidUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -105,7 +105,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderEmployeeId', () => {
-        const fileName = 'testFiles/20230101.csv';
+        const fileName = 'testFiles/20230201.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -116,7 +116,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -125,7 +125,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderLastName', () => {
-        const fileName = 'testFiles/20230102.csv'
+        const fileName = 'testFiles/20230202.csv'
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -136,7 +136,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -145,7 +145,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderFirstName', () => {
-        const fileName = 'testFiles/20230103.csv';
+        const fileName = 'testFiles/20230203.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -156,7 +156,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -165,7 +165,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderBirthday', () => {
-        const fileName = 'testFiles/20230104.csv';
+        const fileName = 'testFiles/20230204.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -176,7 +176,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -185,7 +185,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderDepartment', () => {
-        const fileName = 'testFiles/20230105.csv';
+        const fileName = 'testFiles/20230205.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -196,7 +196,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -205,7 +205,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderPosition', () => {
-        const fileName = 'testFiles/20230106.csv';
+        const fileName = 'testFiles/20230206.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -216,7 +216,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -225,7 +225,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderEmployeeStatus', () => {
-        const fileName = 'testFiles/20230107.csv';
+        const fileName = 'testFiles/20230207.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -236,7 +236,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -245,7 +245,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderContact', () => {
-        const fileName = 'testFiles/20230108.csv';
+        const fileName = 'testFiles/20230208.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -256,7 +256,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -265,7 +265,7 @@
     });
 
     Cypress.Commands.add('invalidHeaderEmail', () => {
-        const fileName = 'testFiles/20230109.csv';
+        const fileName = 'testFiles/20230209.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -276,7 +276,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -285,7 +285,7 @@
     });
 
     Cypress.Commands.add('missingEmployeeId', () => {
-        const fileName = 'testFiles/20230110.csv';
+        const fileName = 'testFiles/20230210.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -296,7 +296,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -305,7 +305,7 @@
     });
 
     Cypress.Commands.add('missingLastName', () => {
-        const fileName = 'testFiles/20230111.csv';
+        const fileName = 'testFiles/20230211.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -316,7 +316,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -325,7 +325,7 @@
     });
 
     Cypress.Commands.add('missingFirstName', () => {
-        const fileName = 'testFiles/20230112.csv';
+        const fileName = 'testFiles/20230212.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -336,7 +336,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -345,7 +345,7 @@
     });
 
     Cypress.Commands.add('missingBirthday', () => {
-        const fileName = 'testFiles/20230113.csv';
+        const fileName = 'testFiles/20230213.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -356,7 +356,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -365,7 +365,7 @@
     });
 
     Cypress.Commands.add('missingDepartment', () => {
-        const fileName = 'testFiles/20230114.csv';
+        const fileName = 'testFiles/20230214.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -376,7 +376,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -385,7 +385,7 @@
     });
 
     Cypress.Commands.add('missingPosition', () => {
-        const fileName = 'testFiles/20230115.csv';
+        const fileName = 'testFiles/20230215.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -396,7 +396,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -405,7 +405,7 @@
     });
 
     Cypress.Commands.add('missingEmployeeStatus', () => {
-        const fileName = 'testFiles/20230116.csv';
+        const fileName = 'testFiles/20230216.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -416,7 +416,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -425,7 +425,7 @@
     });
 
     Cypress.Commands.add('missingContact', () => {
-        const fileName = 'testFiles/20230117.csv';
+        const fileName = 'testFiles/20230217.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -436,7 +436,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -445,7 +445,7 @@
     });
 
     Cypress.Commands.add('missingEmail', () => {
-        const fileName = 'testFiles/20230118.csv';
+        const fileName = 'testFiles/20230218.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -456,7 +456,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -476,7 +476,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -485,7 +485,7 @@
     });
 
     Cypress.Commands.add('outdatedFileName', () => {
-        const fileName = 'testFiles/20221207.csv';
+        const fileName = 'testFiles/20230101.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -496,7 +496,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -509,7 +509,7 @@
             method: 'POST',
             url: url.uploadUrl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
                 'content-type': 'multipart/form-data'
             },
             failOnStatusCode: false
@@ -517,7 +517,7 @@
     });
 
     Cypress.Commands.add('employeeToken', () => {
-        const fileName = 'testFiles/20230118.csv';
+        const fileName = 'testFiles/20230218.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -528,7 +528,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.employeeDev,
+                    'Authorization': token.employeeDev,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -548,7 +548,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -568,7 +568,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -588,7 +588,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false
@@ -608,7 +608,7 @@
                 url: url.uploadUrl,
                 body: formData,
                 headers: {
-                    'auth-token': token.hrPersonnel,
+                    'Authorization': token.hrPersonnel,
                     'content-type': 'multipart/form-data'
                 },
                 failOnStatusCode: false

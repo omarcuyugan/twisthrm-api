@@ -306,7 +306,7 @@
                         method: 'GET',
                         url: '/twisthrm/api/v1/employee/000000-111',
                         headers: {
-                            'auth-token': token.hrPersonnel,
+                            'Authorization': token.hrPersonnel,
                         },
                         failOnStatusCode: false
                     }).then(response => {
@@ -328,7 +328,7 @@
                         method: 'GET',
                         url: '/twisthrm/api/v1/employee/000000-112',
                         headers: {
-                            'auth-token': token.hrPersonnel,
+                            'Authorization': token.hrPersonnel,
                         },
                         failOnStatusCode: false
                     }).then(response => {
@@ -350,7 +350,7 @@
                         method: 'GET',
                         url: '/twisthrm/api/v1/employee/000000-113',
                         headers: {
-                            'auth-token': token.hrPersonnel,
+                            'Authorization': token.hrPersonnel,
                         },
                         failOnStatusCode: false
                     }).then(response => {
@@ -372,7 +372,7 @@
                         method: 'GET',
                         url: '/twisthrm/api/v1/employee/000000-114',
                         headers: {
-                            'auth-token': token.hrPersonnel,
+                            'Authorization': token.hrPersonnel,
                         },
                         failOnStatusCode: false
                     }).then(response => {
@@ -390,9 +390,9 @@
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
                     const body = JSON.parse(bodyString)
-                    expect(response.status).to.eq(422)
+                    expect(response.status).to.eq(401)
                     expect(bodyString).to.be.a("string")
-                    expect(body).to.have.property("message", "you don't have the right permission for this action")
+                    expect(body).to.have.property("message", "You don't have the right permission for this action")
                 })
         })
 

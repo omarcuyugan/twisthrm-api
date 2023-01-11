@@ -7,7 +7,7 @@
             method: 'GET',
             url: url.getOurPeople,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -18,7 +18,7 @@
             method: 'GET',
             url: url.invalidIdurl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -29,7 +29,7 @@
             method: 'GET',
             url: url.ValidIdurl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -40,7 +40,7 @@
             method: 'GET',
             url: url.getInvalidUrl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -51,7 +51,7 @@
             method: 'GET',
             url: url.missingRequestPathUrl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -62,7 +62,7 @@
             method: 'GET',
             url: url.getEmployee,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -73,7 +73,7 @@
             method: 'GET',
             url: url.invalidParametersUrl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -84,7 +84,7 @@
             method: 'GET',
             url: url.sortTeamDesc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -96,7 +96,7 @@
             method: 'GET',
             url: url.sortPositionDesc,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -107,7 +107,7 @@
             method: 'GET',
             url: url.getOurPeople,
             headers: {
-                'auth-token': token.invalidToken,
+                'Authorization': token.invalidToken,
             },
             failOnStatusCode: false
         })
@@ -118,7 +118,7 @@
             method: 'GET',
             url: url.getOurPeople,
             headers: {
-                'auth-token': "",
+                'Authorization': "",
             },
             failOnStatusCode: false
         })

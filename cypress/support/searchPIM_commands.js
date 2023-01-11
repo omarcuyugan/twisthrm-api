@@ -7,7 +7,7 @@
             method: 'GET',
             url: url.searchPIM,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -18,7 +18,7 @@
             method: 'GET',
             url: url.searchPIM,
             headers: {
-                'auth-token': token.invalidToken,
+                'Authorization': token.invalidToken,
             },
             failOnStatusCode: false
         })
@@ -29,7 +29,7 @@
             method: 'GET',
             url: url.searchPIM,
             headers: {
-                'auth-token': "",
+                'Authorization': "",
             },
             failOnStatusCode: false
         })
@@ -40,7 +40,7 @@
             method: 'GET',
             url: url.searchInvalidUrl,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
@@ -51,7 +51,7 @@
             method: 'GET',
             url: url.searchPIM,
             headers: {
-                'auth-token': token.employeeDev,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })

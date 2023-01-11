@@ -7,7 +7,7 @@
             method: 'GET',
             url: url.getSpecificEmployee,
             headers: {
-                'auth-token': token.hrPersonnel,
+                'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
