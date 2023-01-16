@@ -45,5 +45,13 @@
     "sortEmailAsc": "/twisthrm/api/v1/employee?queryFrom=pim&isDel=0&sort=trEmail%20ASC&pageSize=10&page=1",
     "sortEmailDesc": "/twisthrm/api/v1/employee?queryFrom=pim&isDel=0&sort=trEmail%20DESC&pageSize=10&page=1",
     "searchPIM": "/twisthrm/api/v1/employee?keyword=Scrum&page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
-    "newsfeedUrl": "/twisthrm/api/v1/newsfeed/"
+    "newsfeedUrl": "/twisthrm/api/v1/newsfeed/",
+
+    "newsFeedPost": "/twisthrm/api/v1/newsfeed/general/27",
+    "invalidUrlPost": "/twisthrm/api/v1/newsfeed322s/general/27",
+    "emptyParameter": "/twisthrm/api/v1/newsfeed/",
+    "imageURL": "https://nbt-trsgdevmnt1-twisthrm-dev-assets.s3.ap-southeast-1.amazonaws.com/posts/twistresources/birthday/38ed7aefa4aa5bc63434355d7155e890d46a42e1.jpg",
+    "invalidParameter": "/twisthrm/api/v1/newsfeed/general/aaa",
+
+    "invalidURL": "{{baseUrl}}/twisthrm/api/v1/newsfd/"
 }

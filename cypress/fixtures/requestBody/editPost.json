@@ -1,0 +1,56 @@
+{
+    "editContent": {
+        "firstName": "Daniel McCoy",
+        "lastName": "MOLINA",
+        "userId": "093022-432",
+        "content": "test content",
+        "type": "standard",
+        "feedType": "standard",
+        "file": ""
+    },
+    "editImage": {
+        "firstName": "Daniel McCoy",
+        "lastName": "MOLINA",
+        "userId": "093022-432",
+        "content": "test image",
+        "type": "standard",
+        "feedType": "standard",
+        "file": "sample image.jpg"
+    },
+    "editPostType": {
+        "firstName": "Daniel McCoy",
+        "lastName": "MOLINA",
+        "userId": "093022-432",
+        "content": "test post type",
+        "type": "standard",
+        "feedType": "standard",
+        "file": "sample image.jpg"
+    },
+    "editInvalidParamater": {
+        "firstName": "Daniel McCoy",
+        "lastName": "MOLINA",
+        "userId": "093022-432",
+        "content": "test invalid parameter",
+        "type": "standard",
+        "feedType": "standard",
+        "file": "sample image.jpg"
+    },
+    "invalidFileFormat": {
+        "firstName": "Daniel McCoy",
+        "lastName": "MOLINA",
+        "userId": "093022-432",
+        "content": "test invalid parameter",
+        "type": "standard",
+        "feedType": "standard",
+        "file": "sample image.pdf"
+    },
+    "exceedFileSize": {
+        "firstName": "Daniel McCoy",
+        "lastName": "MOLINA",
+        "userId": "093022-432",
+        "content": "test invalid parameter",
+        "type": "standard",
+        "feedType": "standard",
+        "file": "15mb.png"
+    }
+}
