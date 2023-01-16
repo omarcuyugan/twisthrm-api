@@ -124,7 +124,6 @@
                     expect(body).to.be.a("string")
                     expect(body).to.include("Invalid token")
                 })
-
         })
 
         it('Empty keys "content" and "file" must be validated', () => {
@@ -134,7 +133,6 @@
                     expect(response).to.have.property("body")
                     expect(response.body).to.have.property("message", "Post must contain either a text or an image")
                 })
-
         })
 
         it('The default type of post must be standard', () => {

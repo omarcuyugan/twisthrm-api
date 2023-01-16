@@ -1,17 +1,13 @@
 {
     const token = require("../fixtures/token/token.json")
     const url = require("../fixtures/testData/urlApi.json")
-    const postText = require("../fixtures/requestBody/postText.json")
-    const postAnnouncement = require("../fixtures/requestBody/postAnnouncement.json")
-    const postBirthday = require("../fixtures/requestBody/postBirthday.json")
-    const postEvent = require("../fixtures/requestBody/postEvent.json")
-    const emptyContent = require("../fixtures/requestBody/emptyText.json")
+    const addPost = require("../fixtures/requestBody/addPost.json")
 
     Cypress.Commands.add('postText', () => {
         cy.request({
             method: 'POST',
             url: url.newsfeedUrl,
-            body: postText,
+            body: addPost.postText,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -23,7 +19,7 @@
         cy.request({
             method: 'POST',
             url: url.newsfeedUrl,
-            body: postAnnouncement,
+            body: addPost.postAnnouncement,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -35,7 +31,7 @@
         cy.request({
             method: 'POST',
             url: url.newsfeedUrl,
-            body: postBirthday,
+            body: addPost.postBirthday,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -47,7 +43,7 @@
         cy.request({
             method: 'POST',
             url: url.newsfeedUrl,
-            body: postEvent,
+            body: addPost.postEvent,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -59,7 +55,7 @@
         cy.request({
             method: 'POST',
             url: url.newsfeedUrl,
-            body: postEvent,
+            body: addPost.postEvent,
             headers: {
                 'Authorization': token.invalidToken,
             },
@@ -71,7 +67,7 @@
         cy.request({
             method: 'POST',
             url: url.newsfeedUrl,
-            body: emptyContent,
+            body: addPost.emptyText,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -83,7 +79,7 @@
         cy.request({
             method: 'POST',
             url: url.newsfeedInvalidUrl,
-            body: postEvent,
+            body: addPost.postEvent,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -238,7 +234,6 @@
         })
     });
 
-    
     Cypress.Commands.add('postWithImageEmptyContent', () => {
         const fileName = 'testFiles/Image.png';
         cy.fixture(fileName, 'binary').then(file => {

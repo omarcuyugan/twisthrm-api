@@ -1,0 +1,32 @@
+{
+    "emptyText":{
+        "content": "",
+        "type": "",
+        "feedType":""
+    },
+
+    "postAnnouncement":{
+        "content": "test automation announcement",
+        "type": "announcement",
+        "feedType":"announcement"   
+    },
+
+    "postBirthday":{
+        "content": "test automation birthday",
+        "type": "birthday",
+        "feedType":"birthday"  
+    },
+
+    "postEvent":{
+        "content": "test automation event",
+        "type": "event",
+        "feedType":"event"  
+    },
+
+    "postText":{
+        "content": "test automation",
+        "type": "",
+        "feedType":""    
+    }
+
+}
