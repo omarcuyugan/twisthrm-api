@@ -25,6 +25,8 @@ import './userProfileDisplay_commands'
 import './userProfileDetails_commands'
 import './newsFeed_commands'
 import './newsFeedEditPost_commands'
+import './newsfeed_addPost_commands'
+
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
