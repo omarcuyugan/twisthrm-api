@@ -6,7 +6,7 @@
     Cypress.Commands.add('postText', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedUrl,
+            url: url.postNewsfeedUrl,
             body: addPost.postText,
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -18,7 +18,7 @@
     Cypress.Commands.add('postTextAnnouncement', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedUrl,
+            url: url.postNewsfeedUrl,
             body: addPost.postAnnouncement,
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -30,7 +30,7 @@
     Cypress.Commands.add('postTextBirthday', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedUrl,
+            url: url.postNewsfeedUrl,
             body: addPost.postBirthday,
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -42,7 +42,7 @@
     Cypress.Commands.add('postTextEvent', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedUrl,
+            url: url.postNewsfeedUrl,
             body: addPost.postEvent,
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -54,7 +54,7 @@
     Cypress.Commands.add('postInvalidToken', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedUrl,
+            url: url.postNewsfeedUrl,
             body: addPost.postEvent,
             headers: {
                 'Authorization': token.invalidToken,
@@ -66,7 +66,7 @@
     Cypress.Commands.add('emptyContentAndFile', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedUrl,
+            url: url.postNewsfeedUrl,
             body: addPost.emptyText,
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -97,7 +97,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -118,7 +118,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.invalidToken,
@@ -139,7 +139,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -160,7 +160,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -181,7 +181,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -202,7 +202,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -223,7 +223,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -244,7 +244,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -286,7 +286,7 @@
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
-                url: url.newsfeedUrl,
+                url: url.postNewsfeedUrl,
                 body: formData,
                 headers: {
                     'Authorization': token.hrPersonnel,
