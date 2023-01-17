@@ -28,7 +28,7 @@
         it('Empty token must be validated', () => {
             cy.emptyToken()
                 .then(response => {
-                    expect(response.status).to.eq(404)
+                    expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
                     expect(response.body).to.include("ACCESS DENIED")
                 })
@@ -41,7 +41,7 @@
                     expect(response.body.data[0]).to.have.property("content")
                     expect(response.body.data[0]).to.have.property("type")
                     expect(response.body.data[0]).to.have.property("createdAt")
-                    expect(response.body.data[5]).to.have.property("imageURL")
+                    expect(response.body.data[2]).to.have.property("imageURL")
                 })
         })
         it('Invalid URL path must be validated', () => {
@@ -49,7 +49,7 @@
                 .then(response => {
                     expect(response.status).to.eq(404)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeed322s/general/27")
+                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeeds")
                 })
         })
         it('Empty parameter must be validated', () => {
@@ -57,7 +57,7 @@
                 .then(response => {
                     expect(response.status).to.eq(404)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeed/")
+                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeed")
                 })
         })
         it('Verify that the imageURL is clickable and previews the image', () => {
@@ -65,7 +65,6 @@
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")  
-                   // console.log();
         })    
     })
     it('Invalid request parameter must be validated', () => {
@@ -109,7 +108,7 @@
         it('Empty token must be validated', () => {
             cy.emptyToken()
                 .then(response => {
-                    expect(response.status).to.eq(404)
+                    expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
                     expect(response.body).to.include("ACCESS DENIED")
                 })
@@ -122,7 +121,7 @@
                     expect(response.body.data[0]).to.have.property("content")
                     expect(response.body.data[0]).to.have.property("type")
                     expect(response.body.data[0]).to.have.property("createdAt")
-                    expect(response.body.data[5]).to.have.property("imageURL")
+                    expect(response.body.data[0]).to.have.property("imageURL")
                 })
         })
         it('Invalid URL path must be validated', () => {
@@ -130,7 +129,7 @@
                 .then(response => {
                     expect(response.status).to.eq(404)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeed322s/general/27")
+                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeeds")
                 })
         })
         it('Empty parameter must be validated', () => {
@@ -138,13 +137,13 @@
                 .then(response => {
                     expect(response.status).to.eq(404)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeed/")
+                    expect(response.body).to.include("Cannot GET /twisthrm/api/v1/newsfeed")
                 })
         })
         it('Verify that the imageURL is clickable and previews the image', () => {
             cy.imageURL()
                 .then(response => {
-                    expect(response.status).to.eq(400)
+                    expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")  
         })    
     })

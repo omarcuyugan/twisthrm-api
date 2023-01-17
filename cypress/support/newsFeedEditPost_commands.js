@@ -39,7 +39,7 @@
         })
     });
 
-    Cypress.Commands.add('invalidToken', () => {
+    Cypress.Commands.add('editInvalidToken', () => {
         cy.request({
             method: 'PUT',
             url: url.newsFeedPost,
@@ -51,7 +51,7 @@
         })
     });
 
-    Cypress.Commands.add('missingToken', () => {
+    Cypress.Commands.add('editMissingToken', () => {
         cy.request({
             method: 'PUT',
             url: url.newsFeedPost,
@@ -63,7 +63,7 @@
         })
     });
 
-    Cypress.Commands.add('emptyToken', () => {
+    Cypress.Commands.add('editEmptyToken', () => {
         cy.request({
             method: 'PUT',
             url: url.newsFeedPost,

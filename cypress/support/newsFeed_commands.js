@@ -5,7 +5,7 @@
     Cypress.Commands.add('newsFeedPost', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -16,7 +16,7 @@
     Cypress.Commands.add('invalidToken', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.invalidToken,
             },
@@ -27,7 +27,7 @@
     Cypress.Commands.add('missingToken', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': ""
             },
@@ -38,7 +38,7 @@
     Cypress.Commands.add('emptyToken', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': ""
             },
@@ -49,7 +49,7 @@
     Cypress.Commands.add('postContents', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -60,7 +60,7 @@
     Cypress.Commands.add('invalidUrlPath', () => {
         cy.request({
             method: 'GET',
-            url: url.invalidUrlPost,
+            url: url.newsfeedInvalidUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -83,10 +83,6 @@
         cy.request({
             method: 'GET',
             url: url.imageURL,
-            headers: {
-                'Authorization': token.hrPersonnel,
-            },
-            failOnStatusCode: false
         })
     });
 
@@ -101,22 +97,11 @@
         })
     });
 
-    Cypress.Commands.add('getEmptyIsdel', () => {
-        cy.request({
-            method: 'GET',
-            url: url.getEmptyIsdel,
-            headers: {
-                'Authorization': token.hrPersonnel
-            },
-            failOnStatusCode: false
-        })
-    });
-
 // employee
     Cypress.Commands.add('newsFeedPost', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.employeeDev,
             },
@@ -127,7 +112,7 @@
     Cypress.Commands.add('invalidToken', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.invalidToken,
             },
@@ -138,7 +123,7 @@
     Cypress.Commands.add('missingToken', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': ""
             },
@@ -149,7 +134,7 @@
     Cypress.Commands.add('emptyToken', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': ""
             },
@@ -160,7 +145,7 @@
     Cypress.Commands.add('postContents', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.employeeDev,
             },
@@ -171,7 +156,7 @@
     Cypress.Commands.add('invalidUrlPath', () => {
         cy.request({
             method: 'GET',
-            url: url.invalidUrlPost,
+            url: url.newsfeedInvalidUrl,
             headers: {
                 'Authorization': token.employeeDev,
             },
@@ -193,10 +178,7 @@
     Cypress.Commands.add('imageURL', () => {
         cy.request({
             method: 'GET',
-            url: "https://nbt-trsgdevmnt1-twisthrm-dev-assets.s3.ap-southeast-1.amazonaws.com/posts/twistresources/birthday/38ed7aefa4aa5bc63434355d7155e890d46a42e1.jpg",
-            headers: {
-                'Authorization': token.employeeDev,
-            },
+            url: url.imageURL,
             failOnStatusCode: false
         })
     });
@@ -207,17 +189,6 @@
             url: url.invalidParameter,
             headers: {
                 'Authorization': token.employeeDev,
-            },
-            failOnStatusCode: false
-        })
-    });
-
-    Cypress.Commands.add('getEmptyIsdel', () => {
-        cy.request({
-            method: 'GET',
-            url: url.getEmptyIsdel,
-            headers: {
-                'Authorization': token.employeeDev
             },
             failOnStatusCode: false
         })
