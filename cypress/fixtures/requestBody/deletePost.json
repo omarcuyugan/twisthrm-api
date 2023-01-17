@@ -1,0 +1,50 @@
+{
+    "deletePost":{
+        "postId": "post-19g6ilczmh3gs",
+        "elementIds": [
+            "posts/stage/general/1",
+            "posts/stage/standard/undefined"
+        ]
+    },
+
+    "invalidParamater":{
+        "postId": "post",
+        "elementIds": [
+            "posts/stage/general/1",
+            "posts/stage/standard/undefined"
+        ]
+    },
+
+    "missingParameter":{
+        "postId": "post-19g6ilczmh3gs",
+        "elementIds": [
+            "",
+            "posts/stage/standard/undefined"
+        ]
+    },
+
+    "emptyParameter":{
+        "postId": "",
+        "elementIds": [
+            "posts/stage/general/1",
+            "posts/stage/standard/undefined"
+        ]
+    },
+
+    "deleteOtherPost":{
+        "postId": "post-19g6ilczm2bnq",
+        "elementIds": [
+            "posts/stage/general/1",
+            "posts/stage/standard/undefined"
+        ]
+    },
+
+    "deleteOwnPost":{
+        "postId": "post-19g6ilczlst9q",
+        "elementIds": [
+            "posts/stage/general/1",
+            "posts/stage/standard/undefined"
+        ]
+    }
+
+}
