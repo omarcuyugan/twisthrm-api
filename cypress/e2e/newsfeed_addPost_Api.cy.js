@@ -1,6 +1,6 @@
 {
     describe('Add Post - Text Only API', () => {
-        it('Should be able to post on the newsfeed section by passing valid token', () => {
+        it(['smoke'],'Should be able to post on the newsfeed section by passing valid token', () => {
             cy.postText()
                 .then(response => {
                     expect(response.status).to.eq(200)
