@@ -1,7 +1,6 @@
 {
   "name": "twisthrm-api_auto",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cypress open"
@@ -9,10 +8,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.0.1",
-    "cypress-mochawesome-reporter": "^3.2.3"
+    "cypress": "^12.4.0",
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "cypress-tags": "^1.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "codecommit://trdevcodecommit@twisthrm-api-auto"
+  },
+  "description": ""
 }
