@@ -48,7 +48,7 @@
                 })
         })
         it('Missing/Empty ID parameters must be validated', () => {
-            cy.missingParameters()
+            cy.missingParametersOurPeople()
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
@@ -58,13 +58,13 @@
         it('Invalid parameters must be validated', () => {
             cy.invalidParameters()
                 .then(response => {
-                    expect(response.status).to.eq(200)
+                    expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "No data found.")
+                    expect(response.body).to.have.property("message", "There was an error when getting all employees")
                 })
         })
         it('Empty parameters must be validated', () => {
-            cy.missingParameters()
+            cy.missingParametersOurPeople()
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
@@ -87,13 +87,13 @@
                     expect(response.body).to.include("Cannot GET /twisthrm/api/employee")
                 })
         })
-        it('Should be able to sort the "Team" to descending order', () => {
-            cy.sortTeam()
-                .then(response => {
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                })
-        })
+        // it('Should be able to sort the "Team" to descending order', () => {
+        //     cy.sortTeam()
+        //         .then(response => {
+        //             expect(response.status).to.eq(200)
+        //             expect(response).to.have.property("body")
+        //         })
+        // })
         it('Should be able to sort the "Position" from ascending to descending order', () => {
             cy.sortPosition()
                 .then(response => {

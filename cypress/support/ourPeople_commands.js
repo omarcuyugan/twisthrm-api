@@ -57,7 +57,7 @@
         })
     });
 
-    Cypress.Commands.add('missingParameters', () => {
+    Cypress.Commands.add('missingParametersOurPeople', () => {
         cy.request({
             method: 'GET',
             url: url.getEmployee,

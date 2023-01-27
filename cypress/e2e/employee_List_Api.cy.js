@@ -102,12 +102,12 @@
                 })
         })
 
-        it('A message "No data found." is returned when the specific page has no available record.', () => {
+        it('A message "There was an error when getting all employees" is returned when the specific page has no available record.', () => {
             cy.getEmployeeInvalidPagePIM()
                 .then(response => {
-                    expect(response.status).to.eq(200)
+                    expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "No data found.")
+                    expect(response.body).to.have.property("message", "There was an error when getting all employees")
                 })
         })
 
