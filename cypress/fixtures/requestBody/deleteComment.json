@@ -1,0 +1,42 @@
+{
+    "deleteComment": {
+        "postId": "post-3bvmawold9s9mm0",
+        "postUserId": "100322-434",
+        "elementIds": [
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
+        ],
+        "commentId": "comment-19g6ild9sxszb",
+        "commentUserId": "093022-430"
+    }, 
+    "invalidField": {
+        "postId": "post-3bvmawold9s9mm0",
+        "postUserId": "100322-434",
+        "elementIds": [
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
+        ],
+        "commentId": "comment-19g6ild9sym7k",
+        "commentUserId": "093022-434"
+    },
+    "missingField": {
+        "postId": "",
+        "postUserId": "100322-434",
+        "elementIds": [
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
+        ],
+        "commentId": "comment-19g6ild9sym7k",
+        "commentUserId": "093022-430"
+    },
+    "emptyField": {
+        "postId": "post-3bvmawold9s9mm0",
+        "postUserId": "100322-434",
+        "elementIds": [
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
+        ],
+        "commentId": "comment-19g6ild9sym7k",
+        "commentUserId": ""
+    }
+}

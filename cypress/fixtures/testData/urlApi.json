@@ -49,11 +49,18 @@
     "newsfeedUrl": "/twisthrm/api/v1/newsfeed/general/1",
     "newsfeedInvalidUrl": "/twisthrm/api/v1/newsfeeds/",
     "emptyParameter": "/twisthrm/api/v1/newsfeed",
-    "invalidParameter": "/twisthrm/api/v1/newsfeed/general/12345",
+    "invalidURLParameter": "/twisthrm/api/v1/newsfeed/general/12345",
     "imageURL": "https://nbt-trsgdevmnt1-twisthrm-dev-assets.s3.ap-southeast-1.amazonaws.com/posts/twistresources/announcement/31bb30bda41672ba73f580133340a67600e44b72.jpg",
 
     "deletePost": "/twisthrm/api/v1/newsfeed/delete",
     "deleteInvalidUrl": "/twisthrm/api/v1/newsfeed/deletess",
     "missingUrl": "/twisthrm/api/newsfeed/delete",
-    "postNewsfeedUrl": "/twisthrm/api/v1/newsfeed/"
+    "postNewsfeedUrl": "/twisthrm/api/v1/newsfeed/",
+    "editNewsfeedUrl": "/twisthrm/api/v1/newsfeed/",
+    
+    "addCommentUrl": "/twisthrm/api/v1/comments",
+    "getComments": "/twisthrm/api/v1/newsfeed/current-post?postId=post-6c0pj6ycld8ewa53&elementId=newsfeed/stage/general/1",
+
+    "deleteComment": "/twisthrm/api/v1/comments/delete",
+    "invalidDelComment": "/twisthrm/api/v1/comments/deletes"
 }

@@ -27,6 +27,8 @@ import './newsFeed_commands'
 import './newsFeedEditPost_commands'
 import './newsfeed_addPost_commands'
 import './deletePost_commands'
+import './newsFeed_AddComment_commands'
+import './deleteComment_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
