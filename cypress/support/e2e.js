@@ -31,6 +31,7 @@ import './newsFeed_AddComment_commands'
 import './deleteComment_commands'
 import './admin_editSkill_commands'
 import'./admin_getSkills_commands'
+import './userProfileSkillList_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

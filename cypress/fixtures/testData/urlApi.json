@@ -75,6 +75,13 @@
     "getInvalidParams": "/twisthrm/api/v1/skill/?sort=id%20ASC&page=3&pageSize=aaaaa",
     "getEmptyParams": "/twisthrm/api/v1/skill/?sort=name%20ASC&pageSize=10",
     "getInvalidURPath": "/twisthrm/api/v1/skills/?sort=id%20ASC&page=3&pageSize=10",
-    "getEmptyURLPath": "/twisthrm/api/v1/?sort=id%20ASC&page=3&pageSize=10"
+    "getEmptyURLPath": "/twisthrm/api/v1/?sort=id%20ASC&page=3&pageSize=10",
     
+    "getSpecificEmployeeSkill": "/twisthrm/api/v1/skill/employee/011722-356",
+    "getSpecificEmployeeSkillInvalidId": "/twisthrm/api/v1/skill/employee/AAAAAAAAA",
+    "getSpecificEmployeeSkillEmptyId": "/twisthrm/api/v1/skill/employee/",
+    "getSpecificEmployeeSkillInvalidUrl": "/twisthrm/api/v1/skill/employeeee/011722-356",
+    "getSpecificEmployeeSkillMissingUrl": "/twisthrm/api/011722-356"
+
+
 }
