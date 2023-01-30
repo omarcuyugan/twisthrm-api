@@ -81,7 +81,12 @@
     "getSpecificEmployeeSkillInvalidId": "/twisthrm/api/v1/skill/employee/AAAAAAAAA",
     "getSpecificEmployeeSkillEmptyId": "/twisthrm/api/v1/skill/employee/",
     "getSpecificEmployeeSkillInvalidUrl": "/twisthrm/api/v1/skill/employeeee/011722-356",
-    "getSpecificEmployeeSkillMissingUrl": "/twisthrm/api/011722-356"
+    "getSpecificEmployeeSkillMissingUrl": "/twisthrm/api/011722-356",
 
+    "deleteSkillUrl": "/twisthrm/api/v1/skill/delete/189",
+    "deleteInvalidURL": "/twisthrm/api/v1/skill/deletess/189",
+    "deleteEmptyURL": "/twisthrm/api/v1/skill/189",
+    "deleteInvalidParams": "/twisthrm/api/v1/skill/delete/asdf",
+    "deleteNonExistId": "/twisthrm/api/v1/skill/delete/1312321"
 
 }

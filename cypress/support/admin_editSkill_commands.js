@@ -48,7 +48,7 @@
         cy.request({
             method: 'PUT',
             url: url.editSkillUrl,
-            body: editSkill.editSkill,
+            body: editSkill,
             headers: {
                 'Authorization': ""
             },
@@ -60,7 +60,7 @@
         cy.request({
             method: 'PUT',
             url: url.invalidSkillUrl,
-            body: editSkill.editSkills,
+            body: editSkill,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -71,7 +71,7 @@
     Cypress.Commands.add('emptySkillParams', () => {
         cy.request({
             method: 'PUT',
-            url: url.emptyEditURL,
+            url: url.editSkillUrl,
             body: emptySkillName,
             headers: {
                 'Authorization': token.hrPersonnel,

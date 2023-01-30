@@ -32,6 +32,7 @@ import './deleteComment_commands'
 import './admin_editSkill_commands'
 import'./admin_getSkills_commands'
 import './userProfileSkillList_commands'
+import './admin_deleteSkill_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

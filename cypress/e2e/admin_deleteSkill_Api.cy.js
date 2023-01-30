@@ -1,26 +1,23 @@
 {
-    describe('Edit skill API as an HR Personnel', () => {
-        it('Should be able to edit skill by passing valid token', () => {
-            cy.editSkill()
+    describe('Delete skill API as an HR Personnel', () => {
+        it('Should be able to delete skill by passing valid token', () => {
+            cy.deleteSkill()
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Successfully updated skill")
+                    expect(response.body).to.have.property("message", "Successfully deleted skill")
                 })
         });
-        it('Verify the edited skill reflect on the database', () => {
-            cy.getUpdatedSkill()
+        it('Verify the deleted skill reflect on the database', () => {
+            cy.getDeletedSkill()
                 .then(response => {
-                    const updatedSkill = "skill edit"
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body.skills[148]).to.have.property("id", 157)
-                    expect(response.body.skills[148]).to.have.property("name").not.eq(updatedSkill);
                 })
         });
 
-        it('Should not be able to edit skill by passing invalid token', () => {
-            cy.invalidTokenSkill()
+        it('Should not be able to delete skill by passing invalid token', () => {
+            cy.deleteInvalidToken()
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
@@ -28,8 +25,8 @@
                 })
         });
 
-        it('Should not be able to edit skill by passing empty token', () => {
-            cy.emptyTokenSkill()
+        it('Should not be able to delete skill by passing empty token', () => {
+            cy.deleteEmptyToken()
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
@@ -38,47 +35,47 @@
         });
 
         it('Validate invalid request parameters', () => {
-            cy.invalidSkillParams()
+            cy.deleteInvalidParams()
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Invalid id parameter")
+                    expect(response.body).to.have.property("message", "Invalid ID parameter")
                 })
         });
 
-        it('Validate empty request parameters', () => {
-            cy.emptySkillParams()
+        it('Validate non existing ID parameters', () => {
+            cy.nonExistId()
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Skill name cannot be empty.")
+                    expect(response.body).to.have.property("message", "Skill doesn't exist.")
                 })
         });
 
         it('Validate invalid url path', () => {
-            cy.invalidPathSkill()
+            cy.deleteInvalidURL()
                 .then(response => {
                     expect(response.status).to.eq(404)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Cannot PUT /twisthrm/api/v1/skill/updatess/157")
+                    expect(response.body).to.include("Cannot DELETE /twisthrm/api/v1/skill/deletess/189")
                 })
         });
 
         it('Validate empty url path', () => {
-            cy.emptyPathSkill()
+            cy.deleteEmptyURL()
                 .then(response => {
                     expect(response.status).to.eq(404)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Cannot PUT /twisthrm/api/v1/updatess/157")
+                    expect(response.body).to.include("Cannot DELETE /twisthrm/api/v1/skill/189")
                 })
         });
 
-        it('Verify the error message upon updating an existing skill', () => {
+        it('Verify the error message upon delete an active skill', () => {
             cy.existingSkill()
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Skill already exists.")
+                    expect(response.body).to.have.property("message", "Fail to delete the skill. Skill is actively being used.")
                 })
         });
     })
