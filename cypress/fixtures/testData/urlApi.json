@@ -62,5 +62,19 @@
     "getComments": "/twisthrm/api/v1/newsfeed/current-post?postId=post-6c0pj6ycld8ewa53&elementId=newsfeed/stage/general/1",
 
     "deleteComment": "/twisthrm/api/v1/comments/delete",
-    "invalidDelComment": "/twisthrm/api/v1/comments/deletes"
+    "invalidDelComment": "/twisthrm/api/v1/comments/deletes",
+
+    "editSkillUrl": "/twisthrm/api/v1/skill/update/157",
+    "emptyEditURL": "/twisthrm/api/v1/skill/update/",
+    "invalidSkillUrl": "/twisthrm/api/v1/skill/update/asfsaf",
+    "invalidEditPath": "/twisthrm/api/v1/skill/updatess/157",
+    "emptyEditPath": "/twisthrm/api/v1/updatess/157",
+
+    "getAllskills": "/twisthrm/api/v1/skill/?page=1&pageSize=150",
+    "getSkillbyId": "/twisthrm/api/v1/skill/?sort=id%20ASC&page=1&pageSize=200",
+    "getInvalidParams": "/twisthrm/api/v1/skill/?sort=id%20ASC&page=3&pageSize=aaaaa",
+    "getEmptyParams": "/twisthrm/api/v1/skill/?sort=name%20ASC&pageSize=10",
+    "getInvalidURPath": "/twisthrm/api/v1/skills/?sort=id%20ASC&page=3&pageSize=10",
+    "getEmptyURLPath": "/twisthrm/api/v1/?sort=id%20ASC&page=3&pageSize=10"
+    
 }

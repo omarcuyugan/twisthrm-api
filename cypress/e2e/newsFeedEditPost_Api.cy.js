@@ -40,14 +40,7 @@
                     expect(response.body).to.include("Invalid Token")
                 })
         })
-        // it('I should be able to edit my own post like the content, type of post, image', () => {
-        //     cy.editPost()
-        //         .then(response => {
-        //             expect(response.status).to.eq(200)
-        //             expect(response).to.have.property("body")
-        //             expect(response.body).to.have.property("message", "Successfully updated")
-        //         })
-        // })
+    
         it('Verify the ablity to update and image/photo', () => {
             cy.editImage()
                 .then(response => {
