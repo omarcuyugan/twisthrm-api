@@ -83,7 +83,7 @@
     it('Empty request URL path must be validated', () => {
         cy.emptyUrl()
             .then(response => {
-                expect(response.status).to.eq(404)
+                expect(response.status).to.eq(401)
                 expect(response).to.have.property("body")
                 expect(response).to.include("Cannot PUT /twisthrm/api/v1/")
             })

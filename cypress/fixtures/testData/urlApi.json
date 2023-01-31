@@ -47,6 +47,7 @@
     "searchPIM": "/twisthrm/api/v1/employee?keyword=Scrum&page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
 
     "newsfeedUrl": "/twisthrm/api/v1/newsfeed/general/1",
+    "newsFeedPost": "/twisthrm/api/v1/newsfeed",
     "newsfeedInvalidUrl": "/twisthrm/api/v1/newsfeeds/",
     "emptyParameter": "/twisthrm/api/v1/newsfeed",
     "invalidURLParameter": "/twisthrm/api/v1/newsfeed/general/12345",
