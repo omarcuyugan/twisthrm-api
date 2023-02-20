@@ -115,7 +115,7 @@
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         })
         it('Empty/Missing Token should be validated', () => {

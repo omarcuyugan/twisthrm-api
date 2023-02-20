@@ -1,11 +1,11 @@
 {
     describe('Delete skill API as an HR Personnel', () => {
-        it('Should be able to delete skill by passing valid token', () => {
+        it('Should be able to delete skill by passing valid token',{ tags: ['@smoke','@coreRegression']}, () => {
             cy.deleteSkill()
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Successfully deleted skill")
+                    expect(response.body).to.have.property("message", "Successfully deleted skill.")
                 })
         });
         it('Verify the deleted skill reflect on the database', () => {
@@ -21,7 +21,7 @@
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         });
 
@@ -71,11 +71,11 @@
         });
 
         it('Verify the error message upon delete an active skill', () => {
-            cy.existingSkill()
+            cy.activeSkill()
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Fail to delete the skill. Skill is actively being used.")
+                    expect(response.body).to.have.property("message", "Failed to delete the skill. Skill is actively being used.")
                 })
         });
     })

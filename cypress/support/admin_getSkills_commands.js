@@ -13,17 +13,6 @@
         })
     });
 
-    Cypress.Commands.add('getUpdatedSkill', () => {
-        cy.request({
-            method: 'GET',
-            url: url.getSkillbyId,
-            headers: {
-                'Authorization': token.hrPersonnel,
-            },
-            failOnStatusCode: false
-        })
-    });
-
     Cypress.Commands.add('emptyTokenSkill', () => {
         cy.request({
             method: 'GET',
@@ -117,4 +106,82 @@
             failOnStatusCode: false
         })
     }); 
+
+    Cypress.Commands.add('searchSkills', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchSkill,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchSkillInvalid', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchSkill,
+            headers: {
+                'Authorization': token.invalidToken,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchSkillNoToken', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchSkill,
+            headers: {
+                'Authorization': "",
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchSkillInvalidUrl', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchSkillInvalidUrl,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchSkillMissingUrl', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchSkillMissingUrl,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchInvalidPage', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchInvalidPage,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchInvalidPageSize', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchInvalidPageSize,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
 }

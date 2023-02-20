@@ -5,38 +5,64 @@
 
     Cypress.Commands.add('editPost', () => {
         cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editContent,
+            method: 'GET',
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
-    });
-
-    Cypress.Commands.add('successPost', () => {
-        cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editContent,
-            headers: {
-                'Authorization': token.hrPersonnel,
-            },
-            failOnStatusCode: false
-        })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.log(postsByDaniel)
+                cy.request({
+                    method: 'PUT',
+                    url: url.newsFeedPost,
+                    body: {
+                        "content": "Edit Post Automation2",
+                        "type": "",
+                        "imageURL": "",
+                        "elementIds": "newsfeed/stage/general/1,newsfeed/stage/general/1",
+                        "postId": firstPostIdByDaniel,
+                    },
+                    headers: {
+                        'Authorization': token.hrPersonnel,
+                    },
+                    failOnStatusCode: false
+                })
+            })
     });
 
     Cypress.Commands.add('failUpdate', () => {
         cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editInvalidParamater,
+            method: 'GET',
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.log(firstPostIdByDaniel);
+                cy.request({
+                    method: 'PUT',
+                    url: url.newsFeedPost,
+                    body: {
+                        "content": "Edit Post Automation",
+                        "type": "standard",
+                        "imageURL": "",
+                        "elementIds": "newsfeed/stage/general/1,newsfeed/stage/general/1",
+                        "postId": "",
+                    },
+                    headers: {
+                        'Authorization': token.hrPersonnel,
+                    },
+                    failOnStatusCode: false
+                })
+            })
     });
 
     Cypress.Commands.add('editInvalidToken', () => {
@@ -77,44 +103,102 @@
 
     Cypress.Commands.add('editImage', () => {
         cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editImage,
+            method: 'GET',
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.log(firstPostIdByDaniel)
+                const fileName = 'testFiles/Image.png';
+                cy.fixture(fileName, 'binary').then(file => {
+                    const blob = Cypress.Blob.binaryStringToBlob(file, 'file');
+                    const formData = new FormData();
+                    formData.append("content", "Automation Edit Image");
+                    formData.append("type", "standard");
+                    formData.append("elementIds", "newsfeed/stage/general/1")
+                    formData.append("file", blob, fileName);
+                    formData.append("postId", firstPostIdByDaniel)
+                    cy.request({
+                        method: 'PUT',
+                        url: url.newsFeedPost,
+                        body: formData,
+                        headers: {
+                            'Authorization': token.hrPersonnel,
+                            'content-type': 'multipart/form-data'
+                        },
+                        failOnStatusCode: false
+                    })
+                })
+            })
     });
 
     Cypress.Commands.add('editTypePost', () => {
         cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editPostType,
+            method: 'GET',
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.request({
+                    method: 'PUT',
+                    url: url.newsFeedPost,
+                    body: {
+                        "content": "Edit Post Type Automation",
+                        "type": "birthdays",
+                        "elementIds": "newsfeed/stage/general/1,newsfeed/stage/general/1",
+                        "postId": firstPostIdByDaniel,
+                    },
+                    headers: {
+                        'Authorization': token.hrPersonnel,
+                    },
+                    failOnStatusCode: false
+                })
+            })
     });
 
     Cypress.Commands.add('editContentPost', () => {
         cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editContent,
+            method: 'GET',
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.request({
+                    method: 'PUT',
+                    url: url.newsFeedPost,
+                    body: {
+                        "content": "Edit Post Content Automation",
+                        "type": "standard",
+                        "elementIds": "newsfeed/stage/general/1,newsfeed/stage/general/1",
+                        "postId": firstPostIdByDaniel,
+                    },
+                    headers: {
+                        'Authorization': token.hrPersonnel,
+                    },
+                    failOnStatusCode: false
+                })
+            })
     });
 
     Cypress.Commands.add('getUpdatedPost', () => {
         cy.request({
             method: 'GET',
-            url: url.newsFeedPost,
+            url: url.newsfeedUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -125,7 +209,7 @@
     Cypress.Commands.add('invalidUrl', () => {
         cy.request({
             method: 'PUT',
-            url: url.invalidParameter,
+            url: url.newsfeedInvalidUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -133,10 +217,10 @@
         })
     });
 
-    Cypress.Commands.add('emptyUrl', () => {
+    Cypress.Commands.add('emptyUrlEditPost', () => {
         cy.request({
             method: 'PUT',
-            url: url.emptyParameter,
+            url: url.emptyRequestUrlEditPost,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -144,23 +228,16 @@
         })
     });
 
-    Cypress.Commands.add('nonEditField', () => {
-        cy.request({
-            method: 'PUT',
-            url: url.newsFeedPost,
-            body: editPost.editInvalidParamater,
-            headers: {
-                'Authorization': token.hrPersonnel,
-            },
-            failOnStatusCode: false
-        })
-    });
-
-    Cypress.Commands.add('invalidFileFormat', () => {
+    Cypress.Commands.add('invalidPostId', () => {
         cy.request({
             method: 'PUT',
             url: url.newsFeedPost,
-            body: editPost.invalidFileFormat,
+            body: {
+                "content": "Edit Post Content Automation",
+                "type": "standard",
+                "elementIds": "newsfeed/stage/general/1,newsfeed/stage/general/1",
+                "postId": "post-",  
+            },
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -168,15 +245,93 @@
         })
     });
 
-    Cypress.Commands.add('invalidFileSize', () => {
+    Cypress.Commands.add('emptyPostId', () => {
         cy.request({
             method: 'PUT',
             url: url.newsFeedPost,
-            body: editPost.exceedFileSize,
+            body: {
+                "content": "Edit Post Content Automation",
+                "type": "standard",
+                "elementIds": "newsfeed/stage/general/1,newsfeed/stage/general/1",
+                "postId": "",  
+            },
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         })
+    });
+
+    Cypress.Commands.add('invalidFileFormatEditPost', () => {
+        cy.request({
+            method: 'GET',
+            url: url.newsfeedUrl,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.log(firstPostIdByDaniel)
+                const fileName = 'testFiles/Cases Study.pdf';
+                cy.fixture(fileName, 'binary').then(file => {
+                    const blob = Cypress.Blob.binaryStringToBlob(file, 'file');
+                    const formData = new FormData();
+                    formData.append("content", "Automation Edit Image");
+                    formData.append("type", "standard");
+                    formData.append("elementIds", "newsfeed/stage/general/1")
+                    formData.append("file", blob, fileName);
+                    formData.append("postId", firstPostIdByDaniel)
+                    cy.request({
+                        method: 'PUT',
+                        url: url.newsFeedPost,
+                        body: formData,
+                        headers: {
+                            'Authorization': token.hrPersonnel,
+                            'content-type': 'multipart/form-data'
+                        },
+                        failOnStatusCode: false
+                    })
+                })
+            })
+    });
+
+    Cypress.Commands.add('invalidFileSizeEdit', () => {
+        cy.request({
+            method: 'GET',
+            url: url.newsfeedUrl,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+            .then(response => {
+                let postsByDaniel = response.body.data.filter(post => post.userId === "093022-432")
+                let firstPostIdByDaniel = postsByDaniel[0].id
+                cy.log(firstPostIdByDaniel)
+                const fileName = 'testFiles/15mb.jpg';
+                cy.fixture(fileName, 'binary').then(file => {
+                    const blob = Cypress.Blob.binaryStringToBlob(file, 'file');
+                    const formData = new FormData();
+                    formData.append("content", "Automation Edit Image");
+                    formData.append("type", "standard");
+                    formData.append("elementIds", "newsfeed/stage/general/1")
+                    formData.append("file", blob, fileName);
+                    formData.append("postId", firstPostIdByDaniel)
+                    cy.request({
+                        method: 'PUT',
+                        url: url.newsFeedPost,
+                        body: formData,
+                        headers: {
+                            'Authorization': token.hrPersonnel,
+                            'content-type': 'multipart/form-data'
+                        },
+                        failOnStatusCode: false,
+                        timeout: 61000
+                    })
+                })
+            })
     });
 }

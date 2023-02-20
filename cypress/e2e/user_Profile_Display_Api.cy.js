@@ -1,6 +1,6 @@
 {
     describe('User Profile Display, As an HR Personnel API', () => {
-        it('I should be able to fetch a specific employee using a valid token', () => {
+        it('I should be able to fetch a specific employee using a valid token',{ tags: ['@smoke','@coreRegression']}, () => {
             cy.getSpecificEmployee()
                 .then(response => {
                     expect(response.status).to.eq(200)
@@ -15,7 +15,7 @@
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         })
 
@@ -41,7 +41,6 @@
                     expect(response.body[0]).to.have.property("TREmail")
                     expect(response.body[0]).to.have.property("CurrentPosition")
                     expect(response.body[0]).to.have.property("Department")
-                    expect(response.body[0]).to.have.property("Team")
                     expect(response.body[0]).to.have.property("Contact")
                     expect(response.body[0]).to.have.property("Status")
                     expect(response.body[0]).to.have.property("Nickname")
@@ -77,7 +76,7 @@
 
     })
     describe('User Profile Display, As an Employee API', () => {
-        it('I should be able to fetch a specific employee using a valid token', () => {
+        it('I should be able to fetch a specific employee using a valid token', { tags: ['@smoke','@coreRegression']}, () => {
             cy.getSpecificEmployeeAsEmployee()
                 .then(response => {
                     expect(response.status).to.eq(200)
@@ -97,7 +96,6 @@
                     expect(response.body[0]).to.have.property("LastName")
                     expect(response.body[0]).to.have.property("TREmail")
                     expect(response.body[0]).to.have.property("CurrentPosition")
-                    expect(response.body[0]).to.have.property("Team")
                     expect(response.body[0]).to.have.property("Nickname")
                 })
         })

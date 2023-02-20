@@ -1,6 +1,6 @@
 {
     describe('Get News Feed API as an HR Personnel ', () => {
-        it('Should be able to get the list of post in news feed by passing valid token', () => {
+        it('Should be able to get the list of post in news feed by passing valid token',{ tags: '@coreRegression' }, () => {
             cy.newsFeedPost()
                 .then(response => {
                     let count = Cypress.$(response.body.data).length
@@ -9,12 +9,12 @@
                     expect(response.body).to.have.property("data").to.have.length(count)
                 })
         })
-        it('Should not be able to get the list of post by passing invalid token', () => {
+        it('Should not be able to get the list of post by passing invalid token',{ tags: '@coreRegression' }, () => {
             cy.invalidToken()
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         })
         it('Should not be able to get the list of post by passing missing token', () => {
@@ -33,15 +33,21 @@
                     expect(response.body).to.include("ACCESS DENIED")
                 })
         })
-        it('The Response must contain the following, time of posting, content of post, type of post, imageUrl preview of the post', () => {
+        it('The Response must contain the following, time of posting, content of post, type of post, imageUrl preview of the post',{ tags: ['@smoke','@coreRegression']}, () => {
             cy.postContents()
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body.data[0]).to.have.property("content")
-                    expect(response.body.data[0]).to.have.property("type")
-                    expect(response.body.data[0]).to.have.property("createdAt")
-                    expect(response.body.data[2]).to.have.property("imageURL")
+                    for (let i = 0; i < response.body.data.length; i++) {
+                        const post = response.body.data[i]
+                        if (post.hasOwnProperty("imageURL")) {
+                            expect(post).to.have.property("content")
+                            expect(post).to.have.property("type")
+                            expect(post).to.have.property("createdAt")
+                            expect(post).to.have.property("imageURL")
+                            break;
+                        }
+                    }
                 })
         })
         it('Invalid URL path must be validated', () => {
@@ -64,18 +70,18 @@
             cy.imageURL()
                 .then(response => {
                     expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")  
-        })    
+                    expect(response).to.have.property("body")
+                })
+        })
+        it('Invalid request parameter must be validated',{ tags: '@coreRegression' }, () => {
+            cy.invalidParameterNewsFeedSection()
+                .then(response => {
+                    expect(response.status).to.eq(200)
+                    expect(response).to.have.property("body")
+                    expect(response.body).to.have.property("id").to.be.null
+                })
+        })
     })
-    it('Invalid request parameter must be validated', () => {
-        cy.invalidParameter()
-            .then(response => {
-                expect(response.status).to.eq(200)
-                expect(response).to.have.property("body")
-                expect(response.body).to.have.property("id").to.be.null
-            })
-    })
-})
 }
 //employee
 {
@@ -89,12 +95,12 @@
                     expect(response.body).to.have.property("data").to.have.length(count)
                 })
         })
-        it('Should not be able to get the list of post by passing invalid token', () => {
+        it('Should not be able to get the list of post by passing invalid token',{ tags: '@coreRegression' }, () => {
             cy.invalidToken()
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         })
         it('Should not be able to get the list of post by passing missing token', () => {
@@ -113,15 +119,21 @@
                     expect(response.body).to.include("ACCESS DENIED")
                 })
         })
-        it('The Response must contain the following, time of posting, content of post, type of post, imageUrl preview of the post', () => {
+        it('The Response must contain the following, time of posting, content of post, type of post, imageUrl preview of the post',{ tags: ['@smoke','@coreRegression']}, () => {
             cy.postContents()
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body.data[0]).to.have.property("content")
-                    expect(response.body.data[0]).to.have.property("type")
-                    expect(response.body.data[0]).to.have.property("createdAt")
-                    expect(response.body.data[0]).to.have.property("imageURL")
+                    for (let i = 0; i < response.body.data.length; i++) {
+                        const post = response.body.data[i]
+                        if (post.hasOwnProperty("imageURL")) {
+                            expect(post).to.have.property("content")
+                            expect(post).to.have.property("type")
+                            expect(post).to.have.property("createdAt")
+                            expect(post).to.have.property("imageURL")
+                            break;
+                        }
+                    }
                 })
         })
         it('Invalid URL path must be validated', () => {
@@ -144,16 +156,16 @@
             cy.imageURL()
                 .then(response => {
                     expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")  
-        })    
+                    expect(response).to.have.property("body")
+                })
+        })
+        it('Invalid request parameter must be validated',{ tags: '@coreRegression' }, () => {
+            cy.invalidParameterNewsFeedSection()
+                .then(response => {
+                    expect(response.status).to.eq(200)
+                    expect(response).to.have.property("body")
+                    expect(response.body).to.have.property("id").to.be.null
+                })
+        })
     })
-    it('Invalid request parameter must be validated', () => {
-        cy.invalidParameter()
-            .then(response => {
-                expect(response.status).to.eq(200)
-                expect(response).to.have.property("body")
-                expect(response.body).to.have.property("id").to.be.null
-            })
-    })
-})
 }

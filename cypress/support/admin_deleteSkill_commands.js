@@ -4,12 +4,24 @@
 
     Cypress.Commands.add('deleteSkill', () => {
         cy.request({
-            method: 'DELETE',
-            url: url.deleteSkillUrl,
+            method: 'GET',
+            url: url.getAllskills,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
+        }).then(response => {
+            let skills = response.body.skills
+            let firstSkill = skills[1].id
+            cy.log(firstSkill)
+            cy.request({
+                method: 'DELETE',
+                url: "/twisthrm/api/v1/skill/delete/" + firstSkill,
+                headers: {
+                    'Authorization': token.hrPersonnel,
+                },
+                failOnStatusCode: false
+            })
         })
     });
 

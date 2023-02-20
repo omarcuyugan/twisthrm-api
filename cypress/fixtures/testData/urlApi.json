@@ -7,7 +7,7 @@
     "invalidIdurl": "/twisthrm/api/v1/employee/31312",
     "loginUrl": "/twisthrm/api/v1/user/login",
     "invalidLoginUrl": "/twisthrm/api/v1/users/login",
-    "invalidParametersUrl": "/twisthrm/api/v1/employee?sort=lastName%20DESC&keyword=123455&isDel=0&queryFrom=ourpeople",
+    "invalidParametersUrl": "/twisthrm/api/v1/employee?sort=AAAAAAA%20DESC&keyword=123455&isDel=0&queryFrom=ourpeople",
     "getInvalidUrl": "/twisthrm/api/v1/employeee?sort=lastName%20DESC&keyword=123455&isDel=0&queryFrom=ourpeople",
     "missingRequestPathUrl": "/twisthrm/api/employee?page=1&pageSize=13&sort=EmployeeNumber+ASC&isDel=0",
     "sortTeamDesc": "/twisthrm/api/v1/employee?isDel=0&sort=lastName%20DESC&keyword=twisthrm&queryFrom=ourpeople",
@@ -31,8 +31,8 @@
     "getSpecificEmployeeInvalidUrl2": "/twisthrm/api/v1/employeess/093022-432",
     "getEmployeePIM": "/twisthrm/api/v1/employee?page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
     "getEmployeeInvalidUrlPIM": "/twisthrm/api/v1/employees?page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
-    "getEmployeeInvalidPagePIM": "/twisthrm/api/v1/employee?page=100&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
-    "getDeactivated": "/twisthrm/api/v1/employee?page=1&pageSize=10&sort=lastName%20ASC&isDel=1&queryFrom=pim",
+    "getEmployeeInvalidPagePIM": "/twisthrm/api/v1/employee?page=99999&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
+    "getDeactivated": "/twisthrm/api/v1/employee?keyword=tester&page=1&pageSize=10&sort=lastName%20ASC&isDel=1&queryFrom=pim",
     "getInvalidIsdel": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=@&sort=trEmail%20ASC&pageSize=10&page=1",
     "getInvalidSort": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=@pageSize=10&page=1",
     "getInvalidPage": "/twisthrm/api/v1/employee?keyword=&queryFrom=pim&isDel=&sort=trEmail%20ASC&pageSize=10&page=@",
@@ -53,6 +53,8 @@
     "invalidURLParameter": "/twisthrm/api/v1/newsfeed/general/12345",
     "imageURL": "https://nbt-trsgdevmnt1-twisthrm-dev-assets.s3.ap-southeast-1.amazonaws.com/posts/twistresources/announcement/31bb30bda41672ba73f580133340a67600e44b72.jpg",
 
+    "emptyRequestUrlEditPost": "/twisthrm/api/v1/",
+    
     "deletePost": "/twisthrm/api/v1/newsfeed/delete",
     "deleteInvalidUrl": "/twisthrm/api/v1/newsfeed/deletess",
     "missingUrl": "/twisthrm/api/newsfeed/delete",
@@ -77,19 +79,45 @@
     "getEmptyParams": "/twisthrm/api/v1/skill/?sort=name%20ASC&pageSize=10",
     "getInvalidURPath": "/twisthrm/api/v1/skills/?sort=id%20ASC&page=3&pageSize=10",
     "getEmptyURLPath": "/twisthrm/api/v1/?sort=id%20ASC&page=3&pageSize=10",
-    
+    "searchSkill": "/twisthrm/api/v1/skill?keyword=Vue&page=1&pageSize=10&sort=name ASC",
+    "searchInvalidPage": "/twisthrm/api/v1/skill?keyword=Vue&page=test&pageSize=10&sort=name ASC",
+    "searchInvalidPageSize": "/twisthrm/api/v1/skill?keyword=Vue&page=1&pageSize=test&sort=name ASC",
+    "searchInvalidSort": "/twisthrm/api/v1/skill?keyword=Vue&page=1&pageSize=10&sort=test",
+    "searchSkillInvalidUrl": "/twisthrm/api/v1/skills?keyword=Vue&page=1&pageSize=10&sort=name ASC",
+    "searchSkillMissingUrl": "/twisthrm/api/v1/?keyword=Vue&page=1&pageSize=10&sort=name ASC",
+
     "getSpecificEmployeeSkill": "/twisthrm/api/v1/skill/employee/011722-356",
     "getSpecificEmployeeSkillInvalidId": "/twisthrm/api/v1/skill/employee/AAAAAAAAA",
     "getSpecificEmployeeSkillEmptyId": "/twisthrm/api/v1/skill/employee/",
     "getSpecificEmployeeSkillInvalidUrl": "/twisthrm/api/v1/skill/employeeee/011722-356",
     "getSpecificEmployeeSkillMissingUrl": "/twisthrm/api/011722-356",
+    "specificEmployeeSkillMissingUrl": "/twisthrm/api/v1/skill/011722-356",
+    "employeeUpdateSkill": "/twisthrm/api/v1/skill/employee/093022-431",
 
-    "deleteSkillUrl": "/twisthrm/api/v1/skill/delete/189",
+    "deleteSkillUrl": "/twisthrm/api/v1/skill/delete/122",
     "deleteInvalidURL": "/twisthrm/api/v1/skill/deletess/189",
     "deleteEmptyURL": "/twisthrm/api/v1/skill/189",
     "deleteInvalidParams": "/twisthrm/api/v1/skill/delete/asdf",
-    "deleteNonExistId": "/twisthrm/api/v1/skill/delete/1312321"
+    "deleteNonExistId": "/twisthrm/api/v1/skill/delete/1312321",
 
-    
+    "addSkill": "/twisthrm/api/v1/skill/create",
+    "addSkillInvalidUrl": "/twisthrm/api/v1/skills/create",
+    "addSkillMissingRequestUrl": "/twisthrm/api/v1/create",
+
+    "getProjects": "/twisthrm/api/v1/project",
+    "getProjectInvalidUrl": "/twisthrm/api/v1/projects",
+    "getProjectMissingRequest": "/twisthrm/api/v1/",
+    "searchProject":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=easy",
+    "searchProjectInvalidPage": "/twisthrm/api/v1/project?sort=name ASC&page=aaaa&pageSize=10&keyword=easy",
+    "searchProjectInvalidPageSize": "/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=aaaaa&keyword=easy",
+    "searchProjectInvalidUrl": "/twisthrm/api/v1/projects?sort=name ASC&page=1&pageSize=10&keyword=easy",
+    "searchProjectMissingRequestUrl": "/twisthrm/api/v1/?sort=name ASC&page=1&pageSize=10&keyword=easy",
+    "noProjectFound": "/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=AAA",
+
+    "getEmployeeProjects": "/twisthrm/api/v1/project/employee/093022-431",
+    "getEmployeeProjectsInvalidID": "/twisthrm/api/v1/project/employee/AAAAA",
+    "getEmployeeProjectsMissingID": "/twisthrm/api/v1/project/employee/",
+    "getEmployeeProjectInvalidURL": "/twisthrm/api/v1/project/employees/093022-431",
+    "getEmployeeProjectMissingRequestUrl": "/twisthrm/api/v1/project/employee/"
 
 }

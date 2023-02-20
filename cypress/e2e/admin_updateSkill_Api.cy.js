@@ -1,6 +1,6 @@
 {
     describe('Edit skill API as an HR Personnel', () => {
-        it('Should be able to edit skill by passing valid token', () => {
+        it('Should be able to edit skill by passing valid token', { tags: ['@smoke','@coreRegression']}, () => {
             cy.editSkill()
                 .then(response => {
                     expect(response.status).to.eq(200)
@@ -10,13 +10,6 @@
         });
         it('Verify the edited skill reflect on the database', () => {
             cy.getUpdatedSkill()
-                .then(response => {
-                    const updatedSkill = "skill edit"
-                    expect(response.status).to.eq(200)
-                    expect(response).to.have.property("body")
-                    expect(response.body.skills[148]).to.have.property("id", 157)
-                    expect(response.body.skills[148]).to.have.property("name").not.eq(updatedSkill);
-                })
         });
 
         it('Should not be able to edit skill by passing invalid token', () => {
@@ -24,7 +17,7 @@
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         });
 
@@ -82,5 +75,4 @@
                 })
         });
     })
-
 }

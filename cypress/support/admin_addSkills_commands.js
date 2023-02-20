@@ -147,7 +147,7 @@
             method: 'POST',
             url: url.addSkill,
             body: {
-                "name": ["Add Skill Postman"]
+                "name": ["Burp Scan"]
             },
             headers: {
                 'Authorization': token.hrPersonnel,

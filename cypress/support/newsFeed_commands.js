@@ -86,10 +86,10 @@
         })
     });
 
-    Cypress.Commands.add('invalidParameter', () => {
+    Cypress.Commands.add('invalidParameterNewsFeedSection', () => {
         cy.request({
             method: 'GET',
-            url: url.invalidParameter,
+            url: url.invalidURLParameter,
             headers: {
                 'Authorization': token.hrPersonnel,
             },

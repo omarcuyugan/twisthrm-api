@@ -84,7 +84,7 @@
             method: 'GET',
             url: url.getSpecificEmployeeSkill,
             headers: {
-                'Authorization': token.hrPersonnel,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })

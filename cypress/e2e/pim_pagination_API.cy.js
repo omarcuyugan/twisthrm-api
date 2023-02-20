@@ -1,6 +1,6 @@
 {
     describe('Pagination As an HR Personnel API', () => {
-        it('Should be able to filter list of employees using "page" parameter', () => {
+        it('Should be able to filter list of employees using "page" parameter', { tags: ['@smoke','@coreRegression']},() => {
             cy.pagePim()
                 .then(response => {
                     expect(response.status).to.eq(200)

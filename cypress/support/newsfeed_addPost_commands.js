@@ -9,7 +9,7 @@
             url: url.postNewsfeedUrl,
             body: addPost.postText,
             headers: {
-                'Authorization': token.hrPersonnel,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })

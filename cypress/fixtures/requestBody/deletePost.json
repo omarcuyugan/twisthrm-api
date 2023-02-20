@@ -10,40 +10,37 @@
     "invalidParamater":{
         "postId": "post",
         "elementIds": [
-            "posts/stage/general/1",
-            "posts/stage/standard/undefined"
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
         ]
     },
 
     "missingParameter":{
-        "postId": "post-19g6ilczmh3gs",
-        "elementIds": [
-            "",
-            "posts/stage/standard/undefined"
-        ]
+        "postId": "post-19g6ilczm2bnq",
+        "elementIds": ""
     },
 
     "emptyParameter":{
         "postId": "",
         "elementIds": [
-            "posts/stage/general/1",
-            "posts/stage/standard/undefined"
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
         ]
     },
 
     "deleteOtherPost":{
         "postId": "post-19g6ilczm2bnq",
         "elementIds": [
-            "posts/stage/general/1",
-            "posts/stage/standard/undefined"
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
         ]
     },
 
     "deleteOwnPost":{
         "postId": "post-19g6ilczlst9q",
         "elementIds": [
-            "posts/stage/general/1",
-            "posts/stage/standard/undefined"
+            "newsfeed/stage/general/1",
+            "newsfeed/stage/general/1"
         ]
     }
 

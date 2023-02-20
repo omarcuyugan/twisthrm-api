@@ -3,7 +3,7 @@
     const url = require("../fixtures/testData/urlApi.json")
 
     describe('Bulk Upload, As an HR Personnel', () => {
-        it('I should be able to upload employee details by passing valid token', () => {
+        it('I should be able to upload employee details by passing valid token', { tags: ['@smoke','@coreRegression']}, () => {
             cy.uploadWithValidToken()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -12,7 +12,7 @@
                     expect(body).to.have.property("message", "Successful File Upload")
                 })
         })
-        it('I should not be able to upload using an invalid authorization token', () => {
+        it('I should not be able to upload using an invalid authorization token',{ tags: '@coreRegression' }, () => {
             cy.invalidToken()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -21,7 +21,7 @@
                 })
         });
 
-        it('I should not be able to upload when there is no authorization token', () => {
+        it('I should not be able to upload when there is no authorization token', { tags: '@coreRegression' },  () => {
             cy.withoutToken()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -30,7 +30,7 @@
                 })
         });
 
-        it('I should be able to upload a valid csv file', () => {
+        it('I should be able to upload a valid csv file', { tags: ['@smoke','@coreRegression']}, () => {
             cy.uploadWithValidToken()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -40,7 +40,7 @@
                 })
         });
 
-        it('A validation message is displayed when uploading a non-CSV file', () => {
+        it('A validation message is displayed when uploading a non-CSV file', { tags: '@coreRegression' }, () => {
             cy.uploadNonCsv()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -60,7 +60,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Employee ID', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Employee ID', { tags: '@coreRegression' }, () => {
             cy.invalidHeaderEmployeeId()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -70,7 +70,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Last Name', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Last Name', { tags: '@coreRegression' }, () => {
             cy.invalidHeaderLastName()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -81,7 +81,7 @@
 
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header First Name', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header First Name',{ tags: '@coreRegression' },  () => {
             cy.invalidHeaderFirstName()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -91,7 +91,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Birthday', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Birthday', { tags: '@coreRegression' }, () => {
             cy.invalidHeaderBirthday()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -101,7 +101,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Department', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Department',{ tags: '@coreRegression' },  () => {
             cy.invalidHeaderDepartment()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -111,7 +111,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Position', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Position',{ tags: '@coreRegression' },  () => {
             cy.invalidHeaderPosition()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -121,7 +121,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Employee Status', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Employee Status',{ tags: '@coreRegression' },  () => {
             cy.invalidHeaderEmployeeStatus()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -132,7 +132,7 @@
 
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Contact', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Contact', { tags: '@coreRegression' }, () => {
             cy.invalidHeaderContact()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -142,7 +142,7 @@
                 })
         })
 
-        it('I should not be able to upload when the CSV file does not contain the same header Email', () => {
+        it('I should not be able to upload when the CSV file does not contain the same header Email', { tags: '@coreRegression' }, () => {
             cy.invalidHeaderEmail()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -253,7 +253,7 @@
                 })
         })
 
-        it('The csv file name must be in the correct format', () => {
+        it('The csv file name must be in the correct format', { tags: '@coreRegression' }, () => {
             cy.uploadWithValidToken()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -263,7 +263,7 @@
                 })
         })
 
-        it('Outdated csv file names are rejected', () => {
+        it('Outdated csv file names are rejected', { tags: '@coreRegression' },  () => {
             cy.outdatedFileName()
                 .then(response => {
                     const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
@@ -392,7 +392,7 @@
                     const body = JSON.parse(bodyString)
                     expect(response.status).to.eq(401)
                     expect(bodyString).to.be.a("string")
-                    expect(body).to.have.property("message", "You don't have the right permission for this action")
+                    expect(body).to.have.property("message", "You don't have the right permission for this action.")
                 })
         })
 

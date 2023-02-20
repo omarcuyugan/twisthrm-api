@@ -3,7 +3,7 @@
     const token = require("../fixtures/token/token.json")
 
     describe('Employee Information List API', () => {
-        it('I should be able to see a List of Employees by passing valid token', () => {
+        it('I should be able to see a List of Employees by passing valid token',{ tags: ['@smoke','@coreRegression']}, () => {
             cy.getEmployeePIM()
                 .then(response => {
                     expect(response.status).to.eq(200)
@@ -12,12 +12,12 @@
                 })
         })
 
-        it('I should not be able to see a List of Employees by passing invalid token', () => {
+        it('I should not be able to see a List of Employees by passing invalid token', { tags: '@coreRegression' }, () => {
             cy.getEmployeeInvalidTokenPIM()
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         })
 
@@ -30,7 +30,7 @@
                 })
         })
 
-        it('List of Employee Names should be sorted A-Z by default', () => {
+        it('List of Employee Names should be sorted A-Z by default', { tags: '@coreRegression' }, () => {
             cy.sortLastNameAZ()
         })
 
@@ -105,9 +105,9 @@
         it('A message "There was an error when getting all employees" is returned when the specific page has no available record.', () => {
             cy.getEmployeeInvalidPagePIM()
                 .then(response => {
-                    expect(response.status).to.eq(500)
+                    expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "There was an error when getting all employees")
+                    expect(response.body).to.have.property("message", "No data found.")
                 })
         })
 

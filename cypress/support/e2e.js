@@ -1,3 +1,6 @@
+const registerCypressGrep = require('@cypress/grep')
+registerCypressGrep()
+
 // ***********************************************************
 // This example support/e2e.js is processed and
 // loaded automatically before your test files.
@@ -26,13 +29,16 @@ import './userProfileDetails_commands'
 import './newsFeed_commands'
 import './newsFeedEditPost_commands'
 import './newsfeed_addPost_commands'
-import './deletePost_commands'
+import './newfeed_deletePost_commands'
 import './newsFeed_AddComment_commands'
-import './deleteComment_commands'
+import './newsfeed_deleteComment_commands'
 import './admin_editSkill_commands'
 import'./admin_getSkills_commands'
 import './userProfileSkillList_commands'
 import './admin_deleteSkill_commands'
+import './admin_addSkills_commands'
+import './userProfileUpdateSkills_commands'
+import './admin_getProjectsList_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

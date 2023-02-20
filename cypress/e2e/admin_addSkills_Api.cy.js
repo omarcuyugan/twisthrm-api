@@ -1,6 +1,6 @@
 {
     describe('Add skill API as an HR Personnel', () => {
-        it('I should be able to add skills upon passing valid token', () => {
+        it('I should be able to add skills upon passing valid token', { tags: ['@smoke','@coreRegression']},() => {
             cy.addSkillValidToken()
                 .then(response => {
                     expect(response.status).to.eq(200)
@@ -15,7 +15,7 @@
             .then(response => {
                 expect(response.status).to.eq(401)
                 expect(response).to.have.property("body")
-                expect(response.body).to.include("Invalid token")
+                expect(response.body).to.have.property("message", "Invalid token")
             })
         });
         
@@ -28,7 +28,7 @@
             })
         });
 
-        it('I should be able to add multiple skills ', () => {
+        it('I should be able to add multiple skills ', { tags: ['@smoke','@coreRegression']}, () => {
             cy.addMultipleSkills()
             .then(response=> {
                 expect(response.status).to.eq(200)
@@ -98,7 +98,7 @@
             .then(response => {
                 expect(response.status).to.eq(400)
                 expect(response).to.have.property("body")
-                expect(response.body).to.have.property("message", "Duplicate entry 'Add Skill Postman' for key 'name'")
+                expect(response.body).to.have.property("message", "Duplicate entry 'Burp Scan' for key 'name'")
             })
         });
     })

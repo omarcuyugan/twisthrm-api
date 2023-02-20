@@ -1,6 +1,6 @@
 {
     describe('Search As an HR Personnel API', () => {
-        it('I should be able to search an Employee by passing valid token', () => {
+        it('I should be able to search an Employee by passing valid token',{ tags: ['@smoke','@coreRegression']}, () => {
             cy.searchHrPersonnel()
                 .then(async (response) => {
                     let count = Cypress.$(response.body.employees).length
@@ -13,12 +13,12 @@
                 })
         })
 
-        it('I should not be able to search an Employee by passing invalid token', () => {
+        it('I should not be able to search an Employee by passing invalid token',{ tags: '@coreRegression' }, () => {
             cy.searchEmployeeInvalid()
                 .then(response => {
                     expect(response.status).to.eq(401)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.include("Invalid token")
+                    expect(response.body).to.have.property("message", "Invalid token")
                 })
         })
 
@@ -44,7 +44,7 @@
                 })
         })
 
-        it('Search result must be related to the search keyword', () => {
+        it('Search result must be related to the search keyword', { tags: '@coreRegression' },() => {
             cy.searchHrPersonnel()
                 .then(async (response) => {
                     let count = Cypress.$(response.body.employees).length
