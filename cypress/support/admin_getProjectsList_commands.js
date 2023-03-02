@@ -39,7 +39,7 @@
         let listingCount = "";
         let GenSampleAZ = [];
         let GenSampleToSort = [];
-        cy.getAllSkills().then(async (response) => {
+        cy.getAllProjects().then(async (response) => {
             listingCount = Cypress.$(response.body.project).length;
             for (let x = 0; x < listingCount; x++) {
                 GenSampleAZ.push(response.body.project[x].name)
@@ -100,6 +100,28 @@
         cy.request({
             method: 'GET',
             url: url.searchProject,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchDomain', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchDomain,
+            headers: {
+                'Authorization': token.hrPersonnel,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('searchTechAndTools', () => {
+        cy.request({
+            method: 'GET',
+            url: url.searchTechAndTools,
             headers: {
                 'Authorization': token.hrPersonnel,
             },

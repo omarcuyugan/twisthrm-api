@@ -108,6 +108,8 @@
     "getProjectInvalidUrl": "/twisthrm/api/v1/projects",
     "getProjectMissingRequest": "/twisthrm/api/v1/",
     "searchProject":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=easy",
+    "searchDomain":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=Real Estate",
+    "searchTechAndTools":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=React",
     "searchProjectInvalidPage": "/twisthrm/api/v1/project?sort=name ASC&page=aaaa&pageSize=10&keyword=easy",
     "searchProjectInvalidPageSize": "/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=aaaaa&keyword=easy",
     "searchProjectInvalidUrl": "/twisthrm/api/v1/projects?sort=name ASC&page=1&pageSize=10&keyword=easy",
@@ -118,6 +120,17 @@
     "getEmployeeProjectsInvalidID": "/twisthrm/api/v1/project/employee/AAAAA",
     "getEmployeeProjectsMissingID": "/twisthrm/api/v1/project/employee/",
     "getEmployeeProjectInvalidURL": "/twisthrm/api/v1/project/employees/093022-431",
-    "getEmployeeProjectMissingRequestUrl": "/twisthrm/api/v1/project/employee/"
+    "getEmployeeProjectMissingRequestUrl": "/twisthrm/api/v1/project/employee/",
 
+    "addProjectUrl":"/twisthrm/api/v1/project/create",
+    "addProjectInvalidUrl": "/twisthrm/api/v1/projects/create",
+    "addProjectMissingRequestUrl": "/twisthrm/api/v1/create",
+
+    "deleteProjectInvalidID": "/twisthrm/api/v1/project/delete/sdfsdfsa",
+    "deleteProjectEmptyId": "/twisthrm/api/v1/project/delete/",
+    "deleteProjectInvalidUrl": "/twisthrm/api/v1/project/deletesss/160",
+    "deleteProjectMissingRequestUrl": "/twisthrm/api/v1/project/160",
+
+    "updateProjectInvalidUrl": "/twisthrm/api/v1/project/updatess/20",
+    "updateProjectMissingRequestUrl": "/twisthrm/api/v1/project/20" 
 }

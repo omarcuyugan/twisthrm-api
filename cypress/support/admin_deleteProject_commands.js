@@ -2,26 +2,48 @@
     const token = require("../fixtures/token/token.json")
     const url = require("../fixtures/testData/urlApi.json")
 
-    Cypress.Commands.add('deleteSkill', () => {
+    Cypress.Commands.add('deleteProject', () => {
         cy.request({
             method: 'GET',
-            url: url.getAllskills,
+            url: url.getProjects,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
             failOnStatusCode: false
         }).then(response => {
-            let skills = response.body.skills
-            let firstSkill = skills[0].id
-            cy.log(firstSkill)
+            let project = response.body.project
+            let firstProject = project[0].id
+            cy.log(firstProject)
             cy.request({
                 method: 'DELETE',
-                url: "/twisthrm/api/v1/skill/delete/" + firstSkill,
+                url: "/twisthrm/api/v1/project/delete/" + firstProject,
                 headers: {
                     'Authorization': token.hrPersonnel,
                 },
                 failOnStatusCode: false
             })
+        })
+    });
+
+    Cypress.Commands.add('deleteProjectInvalidToken', () => {
+        cy.request({
+            method: 'DELETE',
+            url: "/twisthrm/api/v1/project/delete/1",
+            headers: {
+                'Authorization': token.invalidToken,
+            },
+            failOnStatusCode: false
+        })
+    });
+
+    Cypress.Commands.add('deleteProjectEmptyToken', () => {
+        cy.request({
+            method: 'DELETE',
+            url: "/twisthrm/api/v1/project/delete/1",
+            headers: {
+                'Authorization': "",
+            },
+            failOnStatusCode: false
         })
     });
 
@@ -36,32 +58,10 @@
         })
     });
 
-    Cypress.Commands.add('deleteInvalidToken', () => {
+    Cypress.Commands.add('deleteProjectInvalidID', () => {
         cy.request({
             method: 'DELETE',
-            url: url.deleteSkillUrl,
-            headers: {
-                'Authorization': token.invalidToken,
-            },
-            failOnStatusCode: false
-        })
-    });
-
-    Cypress.Commands.add('deleteEmptyToken', () => {
-        cy.request({
-            method: 'DELETE',
-            url: url.deleteSkillUrl,
-            headers: {
-                'Authorization': ""
-            },
-            failOnStatusCode: false
-        })
-    });
-
-    Cypress.Commands.add('deleteInvalidParams', () => {
-        cy.request({
-            method: 'DELETE',
-            url: url.deleteInvalidParams,
+            url: url.deleteProjectInvalidID,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -69,10 +69,10 @@
         })
     });
 
-    Cypress.Commands.add('nonExistId', () => {
+    Cypress.Commands.add('deleteProjectEmptyID', () => {
         cy.request({
             method: 'DELETE',
-            url: url.deleteNonExistId,
+            url: url.deleteProjectEmptyId,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -80,10 +80,10 @@
         })
     });
 
-    Cypress.Commands.add('deleteInvalidURL', () => {
+    Cypress.Commands.add('deleteProjectInvalidURL', () => {
         cy.request({
             method: 'DELETE',
-            url: url.deleteInvalidURL,
+            url: url.deleteProjectInvalidUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -91,10 +91,10 @@
         })
     });
 
-    Cypress.Commands.add('deleteEmptyURL', () => {
+    Cypress.Commands.add('deleteProjectMissingRequestURL', () => {
         cy.request({
             method: 'DELETE',
-            url: url.deleteEmptyURL,
+            url: url.deleteProjectMissingRequestUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -102,10 +102,10 @@
         })
     });
 
-    Cypress.Commands.add('activeSkill', () => {
+    Cypress.Commands.add('deleteActiveProject', () => {
         cy.request({
             method: 'DELETE',
-            url: url.deleteSkillUrl,
+            url: "/twisthrm/api/v1/project/delete/1",
             headers: {
                 'Authorization': token.hrPersonnel,
             },

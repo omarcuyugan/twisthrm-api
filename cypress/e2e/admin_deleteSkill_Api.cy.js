@@ -1,11 +1,11 @@
 {
     describe('Delete skill API as an HR Personnel', () => {
-        it('Should be able to delete skill by passing valid token',{ tags: ['@smoke','@coreRegression']}, () => {
+        it('Should be able to delete skill by passing valid token', { tags: ['@smoke', '@coreRegression'] }, () => {
             cy.deleteSkill()
                 .then(response => {
                     expect(response.status).to.eq(200)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Successfully deleted skill.")
+                    expect(response.body).to.have.property("message", "Successfully deleted skill. ")
                 })
         });
         it('Verify the deleted skill reflect on the database', () => {

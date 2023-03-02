@@ -2,10 +2,10 @@
     const token = require("../fixtures/token/token.json")
     const url = require("../fixtures/testData/urlApi.json")
 
-    Cypress.Commands.add('getSpecificEmployeeSkillHrPersonnelToken', () => {
+    Cypress.Commands.add('getEmployeeProjects', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkill,
+            url: url.getEmployeeProjects,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -13,10 +13,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillInvalidToken', () => {
+    Cypress.Commands.add('getEmployeeProjectInvalidToken', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkill,
+            url: url.getEmployeeProjects,
             headers: {
                 'Authorization': token.invalidToken,
             },
@@ -24,10 +24,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillEmptyToken', () => {
+    Cypress.Commands.add('getEmployeeProjectEmptyToken', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkill,
+            url: url.getEmployeeProjects,
             headers: {
                 'Authorization': "",
             },
@@ -35,10 +35,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillInvalidId', () => {
+    Cypress.Commands.add('getEmployeeProjectInvalidId', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkillInvalidId,
+            url: url.getEmployeeProjectsInvalidID,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -46,10 +46,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillEmptyId', () => {
+    Cypress.Commands.add('getEmployeeProfileMissingId', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkillEmptyId,
+            url: url.getEmployeeProjectsMissingID,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -57,10 +57,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillInvalidUrl', () => {
+    Cypress.Commands.add('getEmployeeProjectInvalidUrl', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkillInvalidUrl,
+            url: url.getEmployeeProjectInvalidURL,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -68,10 +68,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillMissingUrl', () => {
+    Cypress.Commands.add('getEmployeeProjectMissingUrl', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkillMissingUrl,
+            url: url.getEmployeeProjectMissingRequestUrl,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -79,10 +79,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillEmployeeToken', () => {
+    Cypress.Commands.add('getEmployeeProjectsAsEmployee', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkill,
+            url: url.getEmployeeProjects,
             headers: {
                 'Authorization': token.employeeDev,
             },
@@ -90,10 +90,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillInvalidTokenEmployee', () => {
+    Cypress.Commands.add('getEmployeeProjectsInvalidTokenAsEmployee', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkill,
+            url: url.getEmployeeProjects,
             headers: {
                 'Authorization': token.invalidToken,
             },
@@ -101,10 +101,10 @@
         })
     });
 
-    Cypress.Commands.add('getSpecificEmployeeSkillEmptyTokenEmployee', () => {
+    Cypress.Commands.add('getEmployeeProjectsEmptyTokenAsEmployee', () => {
         cy.request({
             method: 'GET',
-            url: url.getSpecificEmployeeSkill,
+            url: url.getEmployeeProjects,
             headers: {
                 'Authorization': "",
             },
