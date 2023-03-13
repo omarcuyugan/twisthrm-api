@@ -132,5 +132,13 @@
     "deleteProjectMissingRequestUrl": "/twisthrm/api/v1/project/160",
 
     "updateProjectInvalidUrl": "/twisthrm/api/v1/project/updatess/20",
-    "updateProjectMissingRequestUrl": "/twisthrm/api/v1/project/20" 
+    "updateProjectMissingRequestUrl": "/twisthrm/api/v1/project/20",
+
+    "userProfileAddProjectUrl": "/twisthrm/api/v1/project/employee/create/",
+    "userProfileAddProjectInvalidUrl": "/twisthrm/api/v1/project/employee/create/Tester",
+    "userProfileAddProjectMissingRequestUrl": "/twisthrm/api/v1/project/employee/093022-431",
+
+    "userProfileDeleteProject": "/twisthrm/api/v1/project/employee/delete/",
+    "userProfileDeleteProjectInvalidUrl": "/twisthrm/api/v1/project/employees/delete/34",
+    "userProfileDeleteProjectMissingUrl": "/twisthrm/api/v1/project/employee/34"
 }
