@@ -87,13 +87,7 @@
                     expect(response.body).to.include("Cannot GET /twisthrm/api/employee")
                 })
         })
-        // it('Should be able to sort the "Team" to descending order', () => {
-        //     cy.sortTeam()
-        //         .then(response => {
-        //             expect(response.status).to.eq(200)
-        //             expect(response).to.have.property("body")
-        //         })
-        // })
+
         it('Should be able to sort the "Position" from ascending to descending order', () => {
             cy.sortPosition()
                 .then(response => {
