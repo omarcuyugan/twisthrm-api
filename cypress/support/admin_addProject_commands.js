@@ -11,7 +11,7 @@
             body: {
                 "project_name": newProject,
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -29,7 +29,7 @@
             body: {
                 "project_name": newProject,
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.invalidToken,
@@ -47,7 +47,7 @@
             body: {
                 "project_name": newProject,
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': "",
@@ -63,7 +63,7 @@
             body: {
                 "project_name": "TwistHRM",
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -79,7 +79,7 @@
             body: {
                 "projects_name": "TwistHRM",
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -95,7 +95,7 @@
             body: {
                 "project_name": "TwistHRM",
                 "domains": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -111,7 +111,7 @@
             body: {
                 "project_name": "TwistHRM",
                 "domain": 1,
-                "techToolss": "27,61,421"
+                "techToolss": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -127,7 +127,7 @@
             body: {
                 "project_name": "(TwistHRM)",
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -143,7 +143,7 @@
             body: {
                 "project_name": "Add Project 999",
                 "domain": "(1)",
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -175,7 +175,7 @@
             body: {
                 "project_name": "",
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -191,7 +191,7 @@
             body: {
                 "project_name": "Add Project 999",
                 "domain": "",
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -223,7 +223,7 @@
             body: {
                 "project_name": "TwistHRM",
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -239,7 +239,7 @@
             body: {
                 "project_name": "TwistHRM",
                 "domain": 1,
-                "techTools": "27,61,421"
+                "techTools": "27,61,42"
             },
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -255,7 +255,7 @@
             const formData = new FormData();
             formData.append("project_name", "Add Project Cypress");
             formData.append("domain", "1");
-            formData.append("techTools", "27,61,421");
+            formData.append("techTools", "27,61,42");
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',

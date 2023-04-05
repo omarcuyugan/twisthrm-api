@@ -65,7 +65,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "'projects' parameter required.")
+                    expect(response.body).to.have.property("message", "Project is required.")
                 })
         });
 
@@ -74,7 +74,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "Employee id: 093022-432 - Project id: 8 already exist.")
+                    expect(response.body).to.have.property("message", "Project already exists.")
                 })
         });
 
@@ -92,7 +92,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "'projects' parameter required.")
+                    expect(response.body).to.have.property("message", "Project is required.")
                 })
         });
 
@@ -101,7 +101,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "'projectId' parameter required")
+                    expect(response.body).to.have.property("message", "Project is required.")
                 })
         });
 
@@ -110,7 +110,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "'startDate' parameter required")
+                    expect(response.body).to.have.property("message", "Start date is required")
                 })
         });
 
@@ -146,7 +146,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "'projectId' parameter required")
+                    expect(response.body).to.have.property("message", "Project is required.")
                 })
         });
 
@@ -155,7 +155,7 @@
                 .then(response => {
                     expect(response.status).to.eq(500)
                     expect(response).to.have.property("body")
-                    expect(response.body).to.have.property("message", "'startDate' parameter required")
+                    expect(response.body).to.have.property("message", "Start date is required")
                 })
         });
 
