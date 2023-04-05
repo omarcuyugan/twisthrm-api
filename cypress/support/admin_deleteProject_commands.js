@@ -12,7 +12,7 @@
             failOnStatusCode: false
         }).then(response => {
             let project = response.body.project
-            let firstProject = project[0].id
+            let firstProject = project[20].id
             cy.log(firstProject)
             cy.request({
                 method: 'DELETE',

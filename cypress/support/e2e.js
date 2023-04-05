@@ -45,6 +45,7 @@ import './admin_deleteProject_commands'
 import './admin_updateProject_commands'
 import './userProfile_addProject.commands'
 import './userProfile_deleteProject'
+import './userProfile_updateProject_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

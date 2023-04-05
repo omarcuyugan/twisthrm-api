@@ -7,7 +7,7 @@
 
     // Bulk Upload
     Cypress.Commands.add('uploadWithValidToken', () => {
-        const fileName = 'testFiles/20230301.csv';
+        const fileName = 'testFiles/20230401.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -25,7 +25,7 @@
     });
 
     Cypress.Commands.add('invalidToken', () => {
-        const fileName = 'testFiles/20230301.csv';
+        const fileName = 'testFiles/20230401.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -45,7 +45,7 @@
     });
 
     Cypress.Commands.add('withoutToken', () => {
-        const fileName = 'testFiles/20230301.csv';
+        const fileName = 'testFiles/20230401.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -465,7 +465,7 @@
     });
 
     Cypress.Commands.add('emptyCsv', () => {
-        const fileName = 'testFiles/20230302.csv';
+        const fileName = 'testFiles/20230502.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -537,7 +537,7 @@
     });
 
     Cypress.Commands.add('resignedStatus', () => {
-        const fileName = 'testFiles/20230303.csv';
+        const fileName = 'testFiles/20230503.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -557,7 +557,7 @@
     });
 
     Cypress.Commands.add('terminatedStatus', () => {
-        const fileName = 'testFiles/20230304.csv';
+        const fileName = 'testFiles/20230504.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -577,7 +577,7 @@
     });
 
     Cypress.Commands.add('ojtEndedStatus', () => {
-        const fileName = 'testFiles/20230305.csv';
+        const fileName = 'testFiles/20230505.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
@@ -597,7 +597,7 @@
     });
 
     Cypress.Commands.add('endOfContractStatus', () => {
-        const fileName = 'testFiles/20230306.csv';
+        const fileName = 'testFiles/20230506.csv';
         cy.fixture(fileName, 'binary').then(file => {
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
