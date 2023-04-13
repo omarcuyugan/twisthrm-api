@@ -108,7 +108,7 @@
     "getProjectInvalidUrl": "/twisthrm/api/v1/projects",
     "getProjectMissingRequest": "/twisthrm/api/v1/",
     "searchProject":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=easy",
-    "searchDomain":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=Real Estate",
+    "searchDomain":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=25&keyword=Real Estate",
     "searchTechAndTools":"/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=10&keyword=React",
     "searchProjectInvalidPage": "/twisthrm/api/v1/project?sort=name ASC&page=aaaa&pageSize=10&keyword=easy",
     "searchProjectInvalidPageSize": "/twisthrm/api/v1/project?sort=name ASC&page=1&pageSize=aaaaa&keyword=easy",
@@ -144,6 +144,21 @@
 
     "userProfileUpdateProject": "/twisthrm/api/v1/project/employee/update/",
     "userProfileUpdateProjectInvalidEmployeeId": "/twisthrm/api/v1/project/employee/update/tester",
-    "userProfileUpdateProjectMissingRequestUrl": "/twisthrm/api/v1/project/employee/093022-432"
+    "userProfileUpdateProjectMissingRequestUrl": "/twisthrm/api/v1/project/employee/093022-432",
+
+    "getEventsUrl":"/twisthrm/api/v1/event",
+    "getEventsInvalidUrl":"/twisthrm/api/v1/events",
+    "getEventsMissingUrl":"/twisthrm/api/v1/",
+    "searchEventUrl":"/twisthrm/api/v1/event?sort=name ASC&page=1&pageSize=10&keyword=Town Hall",
+    "searchEventInvalidPage":"/twisthrm/api/v1/event?sort=name ASC&page=one&pageSize=10&keyword=Town Hall",
+    "searchEventInvalidPageSize":"/twisthrm/api/v1/event?sort=name ASC&page=1&pageSize=ten&keyword=Town Hall",
+    "searchEventInvalidUrl":"/twisthrm/api/v1/events?sort=name ASC&page=1&pageSize=10&keyword=Town Hall",
+    "searchEventMissingUrl":"/twisthrm/api/v1/?sort=name ASC&page=1&pageSize=10&keyword=Town Hall",
+    "noEventFound":"/twisthrm/api/v1/event?sort=name ASC&page=1&pageSize=10&keyword=AAAAAAA",
+    "addEventUrl":"/twisthrm/api/v1/event/create",
+    "updateEventUrl":"/twisthrm/api/v1/event/update/",
+    "deleteEventInvalidUrl":"/twisthrm/api/v1/event/deletesss/1",
+    "deleteEventInvalidId":"/twisthrm/api/v1/event/delete/one",
+    "deleteEventUrl":"/twisthrm/api/v1/event/delete/"
 
 }

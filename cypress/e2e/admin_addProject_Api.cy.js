@@ -138,23 +138,23 @@
 
         it('Validate invalid file formats when attaching a file for the logo', () => {
             cy.addProjectInvalidFile()
-            .then(response => {
-                const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
-                const body = JSON.parse(bodyString)
-                expect(response.status).to.eq(500)
-                expect(response).to.have.property("body")
-                expect(body).to.have.property("message", "Invalid or unknown image file format.")
-            })
+                .then(response => {
+                    const bodyString = Cypress.Blob.arrayBufferToBinaryString(response.body);
+                    const body = JSON.parse(bodyString)
+                    expect(response.status).to.eq(500)
+                    expect(response).to.have.property("body")
+                    expect(body).to.have.property("message", "Invalid or unknown image file format.")
+                })
         });
 
         it('Verify the success message upon successful creation of projects', () => {
             cy.addProject()
-            .then(response => {
-                expect(response.status).to.eq(200)
-                expect(response).to.have.property("body")
-                expect(response.body).to.have.property("message", "Successfully saved!")
-                expect(response.body).to.have.property("affectedRows")
-            })
+                .then(response => {
+                    expect(response.status).to.eq(200)
+                    expect(response).to.have.property("body")
+                    expect(response.body).to.have.property("message", "Successfully saved!")
+                    expect(response.body).to.have.property("affectedRows")
+                })
         });
 
         it('Adding a project the response must  contain the following -message, -id, -affectedRows', () => {

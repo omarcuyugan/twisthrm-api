@@ -227,11 +227,11 @@
     });
 
     it('A message "No data found" is in the response when there are no related searches', () => {
-      cy.searchSkillMissingUrl()
+      cy.searchProjectNoDataFound()
         .then(response => {
-          expect(response.status).to.eq(404)
+          expect(response.status).to.eq(200)
           expect(response).to.have.property("body")
-          expect(response.body).to.include("Cannot GET /twisthrm/api/v1/")
+          expect(response.body).to.have.property("message", "No data found.")
         })
     });
   })
