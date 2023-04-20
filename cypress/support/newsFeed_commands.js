@@ -2,7 +2,7 @@
     const token = require("../fixtures/token/token.json")
     const url = require("../fixtures/testData/urlApi.json")
 
-    Cypress.Commands.add('newsFeedPost', () => {
+    Cypress.Commands.add('newsFeedPostHr', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -13,7 +13,7 @@
         })
     });
 
-    Cypress.Commands.add('invalidToken', () => {
+    Cypress.Commands.add('invalidTokenHr', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -24,7 +24,7 @@
         })
     });
 
-    Cypress.Commands.add('missingToken', () => {
+    Cypress.Commands.add('missingTokenHr', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -35,7 +35,7 @@
         })
     });
 
-    Cypress.Commands.add('emptyToken', () => {
+    Cypress.Commands.add('emptyTokenHr', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -46,7 +46,7 @@
         })
     });
 
-    Cypress.Commands.add('postContents', () => {
+    Cypress.Commands.add('postContentsHr', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -57,7 +57,7 @@
         })
     });
 
-    Cypress.Commands.add('invalidUrlPath', () => {
+    Cypress.Commands.add('invalidUrlPathHr', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedInvalidUrl,
@@ -68,10 +68,10 @@
         })
     });
 
-    Cypress.Commands.add('emptyParameter', () => {
+    Cypress.Commands.add('emptyGroupIdHr', () => {
         cy.request({
             method: 'GET',
-            url: url.emptyParameter,
+            url: url.emptyGroupIdParameter,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -79,17 +79,17 @@
         })
     });
 
-    Cypress.Commands.add('imageURL', () => {
+    Cypress.Commands.add('imageURLHr', () => {
         cy.request({
             method: 'GET',
             url: url.imageURL,
         })
     });
 
-    Cypress.Commands.add('invalidParameterNewsFeedSection', () => {
+    Cypress.Commands.add('invalidParameterNewsFeedSectionHr', () => {
         cy.request({
             method: 'GET',
-            url: url.invalidURLParameter,
+            url: url.invalidGroupIdParameter,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -98,7 +98,7 @@
     });
 
 // employee
-    Cypress.Commands.add('newsFeedPost', () => {
+    Cypress.Commands.add('newsFeedPostEmp', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -109,7 +109,7 @@
         })
     });
 
-    Cypress.Commands.add('invalidToken', () => {
+    Cypress.Commands.add('invalidTokenEmp', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -120,7 +120,7 @@
         })
     });
 
-    Cypress.Commands.add('missingToken', () => {
+    Cypress.Commands.add('missingTokenEmp', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -131,7 +131,7 @@
         })
     });
 
-    Cypress.Commands.add('emptyToken', () => {
+    Cypress.Commands.add('emptyTokenEmp', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -142,7 +142,7 @@
         })
     });
 
-    Cypress.Commands.add('postContents', () => {
+    Cypress.Commands.add('postContentsEmp', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedUrl,
@@ -153,7 +153,7 @@
         })
     });
 
-    Cypress.Commands.add('invalidUrlPath', () => {
+    Cypress.Commands.add('invalidUrlPathEmp', () => {
         cy.request({
             method: 'GET',
             url: url.newsfeedInvalidUrl,
@@ -164,10 +164,10 @@
         })
     });
 
-    Cypress.Commands.add('emptyParameter', () => {
+    Cypress.Commands.add('emptyGroupIdEmp', () => {
         cy.request({
             method: 'GET',
-            url: url.emptyParameter,
+            url: url.emptyGroupIdParameter,
             headers: {
                 'Authorization': token.employeeDev,
             },
@@ -175,7 +175,7 @@
         })
     });
 
-    Cypress.Commands.add('imageURL', () => {
+    Cypress.Commands.add('imageURLEmp', () => {
         cy.request({
             method: 'GET',
             url: url.imageURL,
@@ -183,10 +183,10 @@
         })
     });
 
-    Cypress.Commands.add('invalidParameter', () => {
+    Cypress.Commands.add('invalidGroupIdEmp', () => {
         cy.request({
             method: 'GET',
-            url: url.invalidParameter,
+            url: url.invalidGroupIdParameter,
             headers: {
                 'Authorization': token.employeeDev,
             },

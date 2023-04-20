@@ -1,32 +1,32 @@
 {
     "emptyText":{
         "content": "",
-        "type": "",
-        "feedType":""
+        "groupId": "development",
+        "postType":""
     },
 
     "postAnnouncement":{
         "content": "test automation announcement",
-        "type": "announcement",
-        "feedType":"announcement"   
+        "groupId": "development",
+        "postType":"announcements"   
     },
 
     "postBirthday":{
         "content": "test automation birthday",
-        "type": "birthday",
-        "feedType":"birthday"  
+        "groupId": "development",
+        "postType":"birthdays"  
     },
 
     "postEvent":{
         "content": "test automation event",
-        "type": "event",
-        "feedType":"event"  
+        "groupId": "development",
+        "postType":"events"  
     },
 
     "postText":{
-        "content": "test automation",
-        "type": "",
-        "feedType":""    
+        "content": "post-Valid",
+        "groupId": "development",
+        "postType":""    
     }
 
 }

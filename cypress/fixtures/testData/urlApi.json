@@ -46,19 +46,19 @@
     "sortEmailDesc": "/twisthrm/api/v1/employee?queryFrom=pim&isDel=0&sort=trEmail%20DESC&pageSize=10&page=1",
     "searchPIM": "/twisthrm/api/v1/employee?keyword=Scrum&page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
 
-    "newsfeedUrl": "/twisthrm/api/v1/newsfeed/general/1",
+    "newsfeedUrl": "/twisthrm/api/v1/new-newsfeed/?groupId=development",
     "newsFeedPost": "/twisthrm/api/v1/newsfeed",
-    "newsfeedInvalidUrl": "/twisthrm/api/v1/newsfeeds/",
-    "emptyParameter": "/twisthrm/api/v1/newsfeed",
-    "invalidURLParameter": "/twisthrm/api/v1/newsfeed/general/12345",
-    "imageURL": "https://nbt-trsgdevmnt1-twisthrm-dev-assets.s3.ap-southeast-1.amazonaws.com/posts/twistresources/announcement/31bb30bda41672ba73f580133340a67600e44b72.jpg",
+    "newsfeedInvalidUrl": "/twisthrm/api/v1/new-newsfeeds/?groupId=development",
+    "emptyGroupIdParameter": "/twisthrm/api/v1/new-newsfeed/?groupId=",
+    "invalidGroupIdParameter": "/twisthrm/api/v1/new-newsfeed/?groupId=test123",
+    "imageURL": "https://fgt-twisthrm-dev-stage-assets.s3.ap-southeast-1.amazonaws.com/dev/newsfeed/twistresources/newsFeedImage/9b8db638f4f42260c15b7c79e620df423f238e4c.jpg",
 
     "emptyRequestUrlEditPost": "/twisthrm/api/v1/",
     
     "deletePost": "/twisthrm/api/v1/newsfeed/delete",
     "deleteInvalidUrl": "/twisthrm/api/v1/newsfeed/deletess",
     "missingUrl": "/twisthrm/api/newsfeed/delete",
-    "postNewsfeedUrl": "/twisthrm/api/v1/newsfeed/",
+    "postNewsfeedUrl": "/twisthrm/api/v1/new-newsfeed/create",
     "editNewsfeedUrl": "/twisthrm/api/v1/newsfeed/",
     
     "addCommentUrl": "/twisthrm/api/v1/comments",
