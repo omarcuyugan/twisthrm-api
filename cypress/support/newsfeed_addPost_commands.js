@@ -67,7 +67,7 @@
         cy.request({
             method: 'POST',
             url: url.postNewsfeedUrl,
-            body: addPost.emptyText,
+            body: addPost.emptyTextWithImage,
             headers: {
                 'Authorization': token.hrPersonnel,
             },
@@ -75,10 +75,10 @@
         })
     });
 
-    Cypress.Commands.add('newsfeedInvalidUrl', () => {
+    Cypress.Commands.add('postNewsfeedInvalidUrl', () => {
         cy.request({
             method: 'POST',
-            url: url.newsfeedInvalidUrl,
+            url: url.postNewsfeedInvalidUrl,
             body: addPost.postEvent,
             headers: {
                 'Authorization': token.hrPersonnel,
@@ -93,7 +93,8 @@
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
             formData.append("content", "Automation Post with Image");
-            formData.append("type", "standard");
+            formData.append("groupId", "development");
+            formData.append("postType","announcements");
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
@@ -114,7 +115,8 @@
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
             formData.append("content", "Automation Post with Image");
-            formData.append("type", "standard");
+            formData.append("groupId", "development");
+            formData.append("postType","announcements");
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',
@@ -135,7 +137,8 @@
             const blob = Cypress.Blob.binaryStringToBlob(file, 'file/csv');
             const formData = new FormData();
             formData.append("content", "Automation Post with Image");
-            formData.append("type", "");
+            formData.append("groupId", "development");
+            formData.append("postType","");
             formData.append("file", blob, fileName);
             cy.request({
                 method: 'POST',

@@ -49,6 +49,7 @@
     "newsfeedUrl": "/twisthrm/api/v1/new-newsfeed/?groupId=development",
     "newsFeedPost": "/twisthrm/api/v1/newsfeed",
     "newsfeedInvalidUrl": "/twisthrm/api/v1/new-newsfeeds/?groupId=development",
+    "postNewsfeedInvalidUrl":"/twisthrm/api/v1/new-newsfeeds/create",
     "emptyGroupIdParameter": "/twisthrm/api/v1/new-newsfeed/?groupId=",
     "invalidGroupIdParameter": "/twisthrm/api/v1/new-newsfeed/?groupId=test123",
     "imageURL": "https://fgt-twisthrm-dev-stage-assets.s3.ap-southeast-1.amazonaws.com/dev/newsfeed/twistresources/newsFeedImage/9b8db638f4f42260c15b7c79e620df423f238e4c.jpg",

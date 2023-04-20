@@ -5,6 +5,13 @@
         "postType":""
     },
 
+    "emptyTextWithImage":{
+        "content": "",
+        "groupId": "development",
+        "postType":"",
+        "file":""
+    },
+
     "postAnnouncement":{
         "content": "test automation announcement",
         "groupId": "development",
@@ -26,7 +33,8 @@
     "postText":{
         "content": "post-Valid",
         "groupId": "development",
-        "postType":""    
+        "postType":"",
+        "file":" "
     }
 
 }
