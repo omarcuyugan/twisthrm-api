@@ -49,6 +49,7 @@
     "newsfeedUrl": "/twisthrm/api/v1/new-newsfeed/?groupId=development",
     "newsFeedPost": "/twisthrm/api/v1/newsfeed",
     "newsfeedInvalidUrl": "/twisthrm/api/v1/new-newsfeeds/?groupId=development",
+    "newsfeedPostInvalidUrl": "/twisthrm/api/v1/new-newsfeeds/create",
     "postNewsfeedInvalidUrl":"/twisthrm/api/v1/new-newsfeeds/create",
     "emptyGroupIdParameter": "/twisthrm/api/v1/new-newsfeed/?groupId=",
     "invalidGroupIdParameter": "/twisthrm/api/v1/new-newsfeed/?groupId=test123",
