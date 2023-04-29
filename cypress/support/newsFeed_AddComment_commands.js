@@ -13,16 +13,15 @@
             failOnStatusCode: false
         })
             .then(response => {
-                let post = response.body.data
+                let post = response.body
                 let firstPost = post[0].id
                 let firstElementId = post[0].elementIds
                 cy.request({
                     method: 'POST',
                     url: url.addCommentUrl,
                     body: {
-                        "postId": firstPost,
-                        "elementIds": firstElementId,
-                        "content": "add comment from cypress"
+                       
+                        "comment": "add comment from cypress"
                     },
                     headers: {
                         'Authorization': token.employeeDev,
@@ -42,16 +41,14 @@
                 failOnStatusCode: false
             })
                 .then(response => {
-                    let post = response.body.data
+                    let post = response.body
                     let firstPost = post[0].id
                     let firstElementId = post[0].elementIds
                     cy.request({
                         method: 'POST',
                         url: url.addCommentUrl,
                         body: {
-                            "postId": firstPost,
-                            "elementIds": firstElementId,
-                            "content": "add comment from cypress"
+                           "comment":"add comment from cypress"
                         },
                         headers: {
                             'Authorization': token.hrPersonnel,
@@ -61,7 +58,7 @@
                 })
             });
 
-        Cypress.Commands.add('invalidToken', () => {
+        Cypress.Commands.add('invalidTokenAddComment', () => {
             cy.request({
                 method: 'POST',
                 url: url.addCommentUrl,
@@ -73,7 +70,7 @@
         })
         });
 
-        Cypress.Commands.add('missingToken', () => {
+        Cypress.Commands.add('missingTokenAddCOmment', () => {
             cy.request({
                 method: 'POST',
                 url: url.addCommentUrl,
@@ -99,7 +96,7 @@
         Cypress.Commands.add('invalidURLComment', () => {
             cy.request({
                 method: 'POST',
-                url: url.invalidURLParameter,
+                url: url.invalidUrlAddComment,
                 body: addComment.addComment,
                 headers: {
                     'Authorization': token.hrPersonnel,

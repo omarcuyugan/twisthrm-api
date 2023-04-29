@@ -46,7 +46,7 @@
     "sortEmailDesc": "/twisthrm/api/v1/employee?queryFrom=pim&isDel=0&sort=trEmail%20DESC&pageSize=10&page=1",
     "searchPIM": "/twisthrm/api/v1/employee?keyword=Scrum&page=1&pageSize=10&sort=lastName%20ASC&isDel=0&queryFrom=pim",
 
-    "newsfeedUrl": "/twisthrm/api/v1/new-newsfeed/?groupId=development",
+    "newsfeedUrl": "/twisthrm/api/v1/new-newsfeed/?groupId=development&page=1",
     "newsFeedPost": "/twisthrm/api/v1/newsfeed",
     "newsfeedInvalidUrl": "/twisthrm/api/v1/new-newsfeeds/?groupId=development",
     "newsfeedPostInvalidUrl": "/twisthrm/api/v1/new-newsfeeds/create",
@@ -63,7 +63,8 @@
     "postNewsfeedUrl": "/twisthrm/api/v1/new-newsfeed/create",
     "editNewsfeedUrl": "/twisthrm/api/v1/newsfeed/",
     
-    "addCommentUrl": "/twisthrm/api/v1/comments",
+    "addCommentUrl": "/twisthrm/api/v1/new-comment/create/309220",
+    "invalidUrlAddComment":"/twisthrm/api/v1/new-comment/creates/309220",
     "getComments": "/twisthrm/api/v1/newsfeed/current-post?postId=post-6c0pj6ycld8ewa53&elementId=newsfeed/stage/general/1",
 
     "deleteComment": "/twisthrm/api/v1/comments/delete",
