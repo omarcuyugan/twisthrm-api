@@ -1,63 +1,26 @@
 {
     "addComment": {
-        "postId": "post-19g6ild9pgyb5",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ],
-        "content": "test postman"
+        "comment":"add comment from cypress"
     },
-    "invalidField": {
-        "postId": "post-",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ],
-        "content": "test postman"
-    },
+
     "missingField": {
-        "postId": "post-6c0pj6ycld8ewa53",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ],
-        "content": " "
+      
     },
+
+
     "updateComment": {
-        "postId": "post-19g6ild9pgyb5",
-        "commentId": "comment-19g6xld9tisu6",
-        "content": "test check update haha",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ]
+        "comment":"update from cypress"
     },
-    "invalidFieldComment": {
-        "postId": "post-",
-        "commentId": "comment-19g6xld9tisu6",
-        "content": "test check update haha",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ]
-    },
+
+
     "emptyFieldComment": {
-        "postId": "post-19g6ild9pgyb5",
-        "commentId": "",
-        "content": "test check update haha",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ]
+        "comment":""
     },
+
+
     "missingFieldComment": {
-        "postId": "post-19g6ild9pgyb5",
-        "commentId": "comment-19g6xld9tisu6",
-        "content": "",
-        "elementIds": [
-            "newsfeed/stage/general/1",
-            "newsfeed/stage/general/1"
-        ]
-    }
+       
+
+}
 
 }

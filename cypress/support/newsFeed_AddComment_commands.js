@@ -8,7 +8,7 @@
             method: 'GET',
             url: url.newsfeedUrl,
             headers: {
-                'Authorization': token.hrPersonnel,
+                'Authorization': token.employeeDev,
             },
             failOnStatusCode: false
         })
@@ -105,23 +105,11 @@
             })
         });
 
-        Cypress.Commands.add('missingURL', () => {
+        Cypress.Commands.add('missingURLAddComment', () => {
             cy.request({
                 method: 'POST',
-                url: url.missingUrl,
+                url: url.missingUrlAddComment,
                 body: addComment.addComment,
-                headers: {
-                    'Authorization': token.hrPersonnel,
-                },
-                failOnStatusCode: false
-            })
-        });
-
-        Cypress.Commands.add('invalidFields', () => {
-            cy.request({
-                method: 'POST',
-                url: url.addCommentUrl,
-                body: addComment.invalidField,
                 headers: {
                     'Authorization': token.hrPersonnel,
                 },
@@ -165,21 +153,13 @@
                 failOnStatusCode: false
             })
                 .then(response => {
-                    let post = response.body.data
-                    let firstPost = post[0].id
-                    let firstElementId = post[0].elementIds
-                    let firstCommentId = post[0].comments[0].id
-                    cy.log(firstPost)
-                    cy.log(firstElementId)
-                    cy.log(firstCommentId)
+
+               
                     cy.request({
                         method: 'PUT',
-                        url: url.addCommentUrl,
+                        url: url.updateCommentUrl,
                         body: {
-                            "postId": firstPost,
-                            "commentId": firstCommentId,
-                            "elementIds": firstElementId,
-                            "content": "edit comment from cypress"
+                            "comment": "edit comment from cypress"
                         },
                         headers: {
                             'Authorization': token.hrPersonnel,
@@ -199,21 +179,12 @@
                 failOnStatusCode: false
             })
                 .then(response => {
-                    let post = response.body.data
-                    let firstPost = post[0].id
-                    let firstElementId = post[0].elementIds
-                    let firstCommentId = post[0].comments[0].id
-                    cy.log(firstPost)
-                    cy.log(firstElementId)
-                    cy.log(firstCommentId)
+                   
                     cy.request({
                         method: 'PUT',
-                        url: url.addCommentUrl,
+                        url: url.updateCommentUrlEmp,
                         body: {
-                            "postId": firstPost,
-                            "commentId": firstCommentId,
-                            "elementIds": firstElementId,
-                            "content": "edit comment from cypress"
+                            "comment": "edit comment from cypress"
                         },
                         headers: {
                             'Authorization': token.employeeDev,
@@ -285,7 +256,7 @@
         Cypress.Commands.add('missingFieldComment', () => {
             cy.request({
                 method: 'PUT',
-                url: url.addCommentUrl,
+                url: url.updateCommentUrl,
                 body: addComment.missingFieldComment,
                 headers: {
                     'Authorization': token.hrPersonnel,
@@ -297,7 +268,7 @@
         Cypress.Commands.add('emptyFieldComment', () => {
             cy.request({
                 method: 'PUT',
-                url: url.addCommentUrl,
+                url: url.updateCommentUrl,
                 body: addComment.emptyFieldComment,
                 headers: {
                     'Authorization': token.hrPersonnel,

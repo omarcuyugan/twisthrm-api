@@ -60,10 +60,13 @@
     "deletePost": "/twisthrm/api/v1/newsfeed/delete",
     "deleteInvalidUrl": "/twisthrm/api/v1/newsfeed/deletess",
     "missingUrl": "/twisthrm/api/newsfeed/delete",
+    "missingUrlAddComment":"/twisthrm/api/v1/new-comment/create/",
     "postNewsfeedUrl": "/twisthrm/api/v1/new-newsfeed/create",
     "editNewsfeedUrl": "/twisthrm/api/v1/newsfeed/",
     
     "addCommentUrl": "/twisthrm/api/v1/new-comment/create/309220",
+    "updateCommentUrl":"/twisthrm/api/v1/new-comment/update/309323",
+    "updateCommentUrlEmp":"/twisthrm/api/v1/new-comment/update/318376",
     "invalidUrlAddComment":"/twisthrm/api/v1/new-comment/creates/309220",
     "getComments": "/twisthrm/api/v1/newsfeed/current-post?postId=post-6c0pj6ycld8ewa53&elementId=newsfeed/stage/general/1",
 
