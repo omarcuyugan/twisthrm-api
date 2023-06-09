@@ -1,0 +1,66 @@
+{
+
+"schedPostBody":{
+    "content":"post Cypress",
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":"06/25/2023"
+
+},
+
+
+"schedPostBodyEmptyContent":{
+    "content":" ",
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":"06/25/2023"
+
+},
+
+"schedPostBodyMissingContent":{
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":"06/25/2023"
+
+},
+
+"schedPostBodyEmptyDateField":{
+    "content":"post Cypress",
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":" "
+
+},
+
+"schedPostBodyMissingDateField":{
+    "content":"post Cypress",
+    "groupId":"development",
+    "postType":"standard"
+
+},
+
+"schedPostBodyInvalidDateFormat":{
+    "content":"post Cypress",
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":"asdf 16, 2023"
+
+},
+
+"schedPostBodyPastDate":{
+    "content":"post Cypress",
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":"06/01/2023"
+
+},
+
+"schedPostBodySameDate":{
+    "content":"post Cypress",
+    "groupId":"development",
+    "postType":"standard",
+    "postAt":"06/09/2023"
+
+}
+
+}

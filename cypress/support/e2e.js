@@ -50,6 +50,7 @@ import './admin_getEventList_commands'
 import './admin_updateEvent_commands'
 import './admin_addEvent_commands'
 import './admin_deleteEvent_commands'
+import './newsFeed_ScheduledPost_commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

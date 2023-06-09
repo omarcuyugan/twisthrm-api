@@ -13,16 +13,12 @@
             failOnStatusCode: false
         })
             .then(response => {
-                let post = response.body.data
+                let post = response.body
                 let firstPost = post[0].id
-                let firstElementId = post[0].elementIds
+                cy.log(firstPost)
                 cy.request({
-                    method: 'PUT',
-                    url: url.deletePost,
-                    body: {
-                        "postId": firstPost,
-                        "elementIds": firstElementId,
-                    },
+                    method: 'DELETE',
+                    url: url.deletePost+firstPost,
                     headers: {
                         'Authorization': token.hrPersonnel,
                     },

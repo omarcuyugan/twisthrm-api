@@ -57,7 +57,7 @@
 
     "emptyRequestUrlEditPost": "/twisthrm/api/v1/",
     
-    "deletePost": "/twisthrm/api/v1/newsfeed/delete",
+    "deletePost": "/twisthrm/api/v1/new-newsfeed/delete/",
     "deleteInvalidUrl": "/twisthrm/api/v1/newsfeed/deletess",
     "missingUrl": "/twisthrm/api/newsfeed/delete",
     "missingUrlAddComment":"/twisthrm/api/v1/new-comment/create/",
@@ -165,6 +165,10 @@
     "updateEventUrl":"/twisthrm/api/v1/event/update/",
     "deleteEventInvalidUrl":"/twisthrm/api/v1/event/deletesss/1",
     "deleteEventInvalidId":"/twisthrm/api/v1/event/delete/one",
-    "deleteEventUrl":"/twisthrm/api/v1/event/delete/"
+    "deleteEventUrl":"/twisthrm/api/v1/event/delete/",
+
+
+    "createScheduledPostUrl": "/twisthrm/api/v1/scheduled-post/create",
+    "createScheduledPostInvalidUrl": "/twisthrm/api/v1/scheduled-posts/create"
 
 }
